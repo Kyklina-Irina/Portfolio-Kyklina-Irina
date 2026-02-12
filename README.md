@@ -102,7 +102,7 @@
 | 📱 **Телефон** | [+7 (908) 025-19-38](tel:+79080251938) |
 | 💬 **Telegram** | [@Irina1704](https://t.me/Irina1704) |
 | 💼 **GitHub** | [github.com/Kyklina-Irina](https://github.com/Kyklina-Irina) |
-| 🌐 **Портфолио** 🌐 | (https://kyklina-irina.github.io/Portfolio-Kyklina-Irina/) |
+| 🌐 **Портфолио** 🌐 | https://kyklina-irina.github.io/Portfolio-Kyklina-Irina/ |
 | 🚀 **Платформа MAX** | Зарегистрирована в системе MAX |
 
 ---
