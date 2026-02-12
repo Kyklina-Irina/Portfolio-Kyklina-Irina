@@ -1,2 +1,15 @@
-# Portfolio-Kyklina-Irina
-My Portfolio
+# Портфолио Куклиной Ирины
+
+Добро пожаловать в моё портфолио! Здесь представлены мои проекты и навыки.
+
+## 🚀 Технологии
+- HTML5, CSS3, JavaScript
+- Java, JUnit 5
+- Git, GitHub Actions
+
+## 📱 Доступно по ссылке
+https://kyklina-irina.github.io/Portfolio-Kyklina-Irina/
+
+## 📧 Контакты
+- Email: 89080251938@yandex.com
+- GitHub: https://github.com/Kyklina-Irina
