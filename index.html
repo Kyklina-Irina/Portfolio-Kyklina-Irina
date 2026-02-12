@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Куклина Ирина | Портфолио</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #ec4899;
+            --dark-bg: #1e1e2e;
+            --dark-card: #252535;
+            --dark-text: #e0e0ff;
+            --light-bg: #f8f9ff;
+            --light-card: #ffffff;
+            --light-text: #2d3748;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light-bg);
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        body.dark-theme {
+            background: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        body.dark-theme header {
+            background: rgba(30, 30, 46, 0.95);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            font-size: 1.05rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        body.dark-theme nav a {
+            color: var(--dark-text);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 0.3rem 0.5rem;
+            border-radius: 25px;
+        }
+
+        body.dark-theme .language-switch {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .language-switch button {
+            background: none;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--light-text);
+        }
+
+        body.dark-theme .language-switch button {
+            color: var(--dark-text);
+        }
+
+        .language-switch button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .theme-toggle {
+            background: var(--primary-color);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(360deg);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: -1;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.8s ease-out 0.3s forwards;
+        }
+
+        body.dark-theme .hero p {
+            color: var(--dark-text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.8s ease-out 0.6s forwards;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        body.dark-theme .btn-secondary {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            opacity: 0;
+            animation: fadeInRight 1s ease-out 0.8s forwards;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 5px solid white;
+        }
+
+        body.dark-theme .hero-image img {
+            border-color: var(--dark-card);
+        }
+
+        /* Section Base */
+        section {
+            padding: 6rem 10%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .about-image {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 5px solid white;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .about-image img {
+            border-color: var(--dark-card);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.2s; }
+        .skill-category:nth-child(2) { animation-delay: 0.4s; }
+        .skill-category:nth-child(3) { animation-delay: 0.6s; }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .skill-level {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        body.dark-theme .skill-bar {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-content {
+            background: var(--light-card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .timeline-content {
+            background: var(--dark-card);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: 100%;
+            transform: translateX(50%);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: 100%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            left: -100px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            right: -100px;
+            text-align: left;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-content .company {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .timeline-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            justify-items: center;
+        }
+
+        .project-card {
+            background: var(--light-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 450px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease-out forwards;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .project-card {
+            background: var(--dark-card);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.4s; }
+        .project-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image i {
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .project-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: var(--light-text);
+        }
+
+        body.dark-theme .project-info p {
+            color: var(--dark-text);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        body.dark-theme .tag {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--dark-text);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            padding: 0.7rem 1.5rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .link-github {
+            background: var(--light-card);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        body.dark-theme .link-github {
+            background: var(--dark-card);
+            color: var(--dark-text);
+            border-color: var(--primary-color);
+        }
+
+        .link-github:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .link-demo {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .link-demo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Education Section */
+        .education-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: var(--light-card);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease-out forwards;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .education-item {
+            background: var(--dark-card);
+        }
+
+        .education-item:hover {
+            transform: translateX(-30px) translateY(-5px);
+        }
+
+        .education-item:nth-child(1) { animation-delay: 0.2s; }
+        .education-item:nth-child(2) { animation-delay: 0.4s; }
+        .education-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .education-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .education-item .institution {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .education-item .period {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        body.dark-theme .education-item .period {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .education-item p {
+            line-height: 1.7;
+            color: var(--light-text);
+        }
+
+        body.dark-theme .education-item p {
+            color: var(--dark-text);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .contact-form {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        body.dark-theme .contact-details p,
+        body.dark-theme .contact-details a {
+            color: var(--dark-text);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: var(--light-card);
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+
+        body.dark-theme .form-control {
+            background: var(--dark-card);
+            color: var(--dark-text);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--dark-text);
+            padding: 3rem 10%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            nav ul {
+                gap: 1.2rem;
+            }
+            nav a {
+                font-size: 0.95rem;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.15rem;
+            }
+            .hero-image {
+                width: 350px;
+            }
+            section {
+                padding: 5rem 8%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 3rem;
+            }
+            .hero p, .hero-buttons {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero::before, .hero::after {
+                display: none;
+            }
+            .hero-image {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                width: 300px;
+                margin-top: 2rem;
+            }
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .about-text, .about-image {
+                opacity: 1;
+                transform: none;
+            }
+            .about-image {
+                order: -1;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -30px;
+            }
+            .timeline-item:nth-child(odd) .timeline-date,
+            .timeline-item:nth-child(even) .timeline-date {
+                left: -120px;
+                right: auto;
+                text-align: right;
+            }
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 5%;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-image {
+                width: 280px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            section {
+                padding: 4rem 5%;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .education-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-image {
+                width: 250px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .timeline-item:nth-child(odd) .timeline-date,
+            .timeline-item:nth-child(even) .timeline-date {
+                left: -100px;
+                font-size: 0.9rem;
+            }
+            .timeline-content {
+                padding: 1.5rem;
+            }
+            .timeline-content h3 {
+                font-size: 1.3rem;
+            }
+            .project-info h3 {
+                font-size: 1.3rem;
+            }
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Irina<span>.</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
+                <li><a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a></li>
+                <li><a href="#experience" data-ru="Опыт" data-en="Experience">Опыт</a></li>
+                <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
+                <li><a href="#education" data-ru="Образование" data-en="Education">Образование</a></li>
+                <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <div class="language-switch">
+                <button class="active" data-lang="ru">Русский</button>
+                <button data-lang="en">English</button>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-ru="Куклина Ирина" data-en="Kuklina Irina">Куклина Ирина</h1>
+            <p data-ru="Инженер-тестировщик, разработчик на Java, специалист в области информационных технологий" 
+               data-en="QA Engineer, Java Developer, IT Specialist">
+                Инженер-тестировщик, разработчик на Java, специалист в области информационных технологий
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary" data-ru="Мои проекты" data-en="My Projects">
+                    <i class="fas fa-briefcase"></i> Мои проекты
+                </a>
+                <a href="#contact" class="btn btn-secondary" data-ru="Связаться" data-en="Contact Me">
+                    <i class="fas fa-envelope"></i> Связаться
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x500?text=Фото" alt="Ирина Куклина" 
+                 data-ru="Фотография Ирины Куклиной" data-en="Irina Kuklina Photo">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-ru="Привет! Я Ирина" data-en="Hi! I'm Irina">Привет! Я Ирина</h3>
+                <p data-ru="Я специалист в области информационных технологий с опытом в тестировании программного обеспечения, разработке на Java и работе с системами автоматизации. Мои ключевые компетенции включают ручное и автоматизированное тестирование, работу с базами данных, администрирование 1С и управление проектами." 
+                   data-en="I am an IT specialist with experience in software testing, Java development, and automation systems. My key competencies include manual and automated testing, database management, 1C administration, and project management.">
+                    Я специалист в области информационных технологий с опытом в тестировании программного обеспечения, разработке на Java и работе с системами автоматизации. Мои ключевые компетенции включают ручное и автоматизированное тестирование, работу с базами данных, администрирование 1С и управление проектами.
+                </p>
+                <p data-ru="Я постоянно развиваюсь в профессиональной сфере, изучаю новые технологии и методологии разработки. В настоящее время углубленно изучаю искусственный интеллект и современные подходы к тестированию." 
+                   data-en="I continuously develop my professional skills, study new technologies and development methodologies. Currently, I am deeply studying artificial intelligence and modern testing approaches.">
+                    Я постоянно развиваюсь в профессиональной сфере, изучаю новые технологии и методологии разработки. В настоящее время углубленно изучаю искусственный интеллект и современные подходы к тестированию.
+                </p>
+                <p data-ru="Обладаю аналитическим складом ума, внимательностью к деталям и способностью работать в многозадачном режиме. Ценю качество, надежность и постоянное самосовершенствование." 
+                   data-en="I have an analytical mind, attention to detail, and the ability to work in a multitasking environment. I value quality, reliability, and continuous self-improvement.">
+                    Обладаю аналитическим складом ума, внимательностью к деталям и способностью работать в многозадачном режиме. Ценю качество, надежность и постоянное самосовершенствование.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x400?text=Обо+мне" alt="Обо мне" 
+                     data-ru="Фотография для раздела Обо мне" data-en="About section photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: linear-gradient(180deg, var(--light-bg) 0%, #eef1ff 100%);">
+        <h2 class="section-title" data-ru="Навыки" data-en="Skills">Навыки</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 data-ru="Технические навыки" data-en="Technical Skills">Технические навыки</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Java Development" data-en="Java Development">Java Development</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Автотестирование" data-en="Test Automation">Автотестирование</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Selenide / Selenium" data-en="Selenide / Selenium">Selenide / Selenium</span>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="JUnit 5" data-en="JUnit 5">JUnit 5</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Maven / Gradle" data-en="Maven / Gradle">Maven / Gradle</span>
+                        <span class="skill-level">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Git / GitHub" data-en="Git / GitHub">Git / GitHub</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 data-ru="Бизнес-навыки" data-en="Business Skills">Бизнес-навыки</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="1С:Предприятие" data-en="1C:Enterprise">1С:Предприятие</span>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Ручное тестирование" data-en="Manual Testing">Ручное тестирование</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Работа с документацией" data-en="Documentation">Работа с документацией</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Кассовые операции" data-en="Cash Operations">Кассовые операции</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Розничная торговля" data-en="Retail">Розничная торговля</span>
+                        <span class="skill-level">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Работа с клиентами" data-en="Customer Service">Работа с клиентами</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 data-ru="Дополнительные навыки" data-en="Additional Skills">Дополнительные навыки</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Искусственный интеллект" data-en="Artificial Intelligence">Искусственный интеллект</span>
+                        <span class="skill-level">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Английский язык" data-en="English Language">Английский язык</span>
+                        <span class="skill-level">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Командная работа" data-en="Teamwork">Командная работа</span>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Многозадачность" data-en="Multitasking">Многозадачность</span>
+                        <span class="skill-level">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Водительские права (категория B)" data-en="Driver's License (Category B)">Водительские права (категория B)</span>
+                        <span class="skill-level">100%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="100%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name" data-ru="Офисные программы" data-en="Office Software">Офисные программы</span>
+                        <span class="skill-level">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title" data-ru="Опыт работы" data-en="Work Experience">Опыт работы</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date" data-ru="2024 - настоящее время" data-en="2024 - Present">2024 - настоящее время</span>
+                    <h3 data-ru="Инженер по тестированию" data-en="QA Engineer">Инженер по тестированию</h3>
+                    <span class="company" data-ru="IT-компания" data-en="IT Company">IT-компания</span>
+                    <p data-ru="Разработка и выполнение тестовой документации, автоматизация тестирования с использованием Selenide и JUnit 5, работа с CI/CD системами, интеграция тестов в процесс разработки." 
+                       data-en="Development and execution of test documentation, test automation using Selenide and JUnit 5, working with CI/CD systems, integration of tests into the development process.">
+                        Разработка и выполнение тестовой документации, автоматизация тестирования с использованием Selenide и JUnit 5, работа с CI/CD системами, интеграция тестов в процесс разработки.
+                    </p>
+                    <p data-ru="Настройка и запуск систем под тестирование в среде непрерывной интеграции, обеспечение качества программного обеспечения на всех этапах разработки." 
+                       data-en="Setting up and launching systems under test in CI environments, ensuring software quality at all stages of development.">
+                        Настройка и запуск систем под тестирование в среде непрерывной интеграции, обеспечение качества программного обеспечения на всех этапах разработки.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date" data-ru="2020 - 2024" data-en="2020 - 2024">2020 - 2024</span>
+                    <h3 data-ru="Оператор / Кассир 1С" data-en="Operator / Cashier 1C">Оператор / Кассир 1С</h3>
+                    <span class="company" data-ru="Торговая компания" data-en="Trading Company">Торговая компания</span>
+                    <p data-ru="Работа с кассовыми аппаратами, обработка товарных операций, ведение документации, работа с клиентами, управление денежными потоками." 
+                       data-en="Working with cash registers, processing commodity operations, maintaining documentation, working with clients, managing cash flows.">
+                        Работа с кассовыми аппаратами, обработка товарных операций, ведение документации, работа с клиентами, управление денежными потоками.
+                    </p>
+                    <p data-ru="Опыт работы с системой 1С:Предприятие, обработка первичной документации, формирование отчетов, взаимодействие с поставщиками и клиентами." 
+                       data-en="Experience with 1C:Enterprise system, processing primary documentation, generating reports, interacting with suppliers and clients.">
+                        Опыт работы с системой 1С:Предприятие, обработка первичной документации, формирование отчетов, взаимодействие с поставщиками и клиентами.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date" data-ru="2018 - 2020" data-en="2018 - 2020">2018 - 2020</span>
+                    <h3 data-ru="Специалист по работе с клиентами" data-en="Customer Service Specialist">Специалист по работе с клиентами</h3>
+                    <span class="company" data-ru="Сервисная компания" data-en="Service Company">Сервисная компания</span>
+                    <p data-ru="Консультирование клиентов, решение технических вопросов, обработка заказов, ведение отчетности, работа с базами данных." 
+                       data-en="Client consulting, solving technical issues, order processing, reporting, working with databases.">
+                        Консультирование клиентов, решение технических вопросов, обработка заказов, ведение отчетности, работа с базами данных.
+                    </p>
+                    <p data-ru="Обеспечение высокого уровня обслуживания, решение конфликтных ситуаций, координация с другими отделами компании." 
+                       data-en="Ensuring high service level, resolving conflict situations, coordinating with other company departments.">
+                        Обеспечение высокого уровня обслуживания, решение конфликтных ситуаций, координация с другими отделами компании.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date" data-ru="2015 - 2018" data-en="2015 - 2018">2015 - 2018</span>
+                    <h3 data-ru="Оператор ПК" data-en="PC Operator">Оператор ПК</h3>
+                    <span class="company" data-ru="Производственная компания" data-en="Manufacturing Company">Производственная компания</span>
+                    <p data-ru="Работа с офисным оборудованием, обработка данных, ведение электронной документации, подготовка отчетов и презентаций." 
+                       data-en="Working with office equipment, data processing, maintaining electronic documentation, preparing reports and presentations.">
+                        Работа с офисным оборудованием, обработка данных, ведение электронной документации, подготовка отчетов и презентаций.
+                    </p>
+                    <p data-ru="Взаимодействие с различными программными системами, обеспечение бесперебойной работы офисных процессов." 
+                       data-en="Interaction with various software systems, ensuring uninterrupted office processes.">
+                        Взаимодействие с различными программными системами, обеспечение бесперебойной работы офисных процессов.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: linear-gradient(180deg, #f8f9ff 0%, #fff 100%);">
+        <h2 class="section-title" data-ru="Проекты" data-en="Projects">Проекты</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="project-info">
+                    <h3 data-ru="Автоматизация тестирования веб-приложения" data-en="Web Application Test Automation">Автоматизация тестирования веб-приложения</h3>
+                    <p data-ru="Разработка комплексной системы автоматизированного тестирования с использованием Selenide, JUnit 5 и Gradle. Интеграция с системой непрерывной интеграции." 
+                       data-en="Development of a comprehensive automated testing system using Selenide, JUnit 5 and Gradle. Integration with CI/CD system.">
+                        Разработка комплексной системы автоматизированного тестирования с использованием Selenide, JUnit 5 и Gradle. Интеграция с системой непрерывной интеграции.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Selenide</span>
+                        <span class="tag">JUnit 5</span>
+                        <span class="tag">Gradle</span>
+                        <span class="tag">GitHub Actions</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kyklina-Irina/netologi.web" class="link-github" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="link-demo">
+                            <i class="fas fa-external-link-alt"></i> Демо
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="project-info">
+                    <h3 data-ru="Система управления задачами" data-en="Task Management System">Система управления задачами</h3>
+                    <p data-ru="Разработка веб-приложения для управления задачами и проектами. Реализация функционала для отслеживания прогресса, распределения задач и генерации отчетов." 
+                       data-en="Development of a web application for task and project management. Implementation of functionality for tracking progress, task distribution and report generation.">
+                        Разработка веб-приложения для управления задачами и проектами. Реализация функционала для отслеживания прогресса, распределения задач и генерации отчетов.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Maven</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="link-demo">
+                            <i class="fas fa-external-link-alt"></i> Демо
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-info">
+                    <h3 data-ru="Исследование ИИ в тестировании" data-en="AI Research in Testing">Исследование ИИ в тестировании</h3>
+                    <p data-ru="Изучение и применение методов искусственного интеллекта для автоматизации процессов тестирования. Анализ современных подходов и инструментов." 
+                       data-en="Study and application of artificial intelligence methods for automating testing processes. Analysis of modern approaches and tools.">
+                        Изучение и применение методов искусственного интеллекта для автоматизации процессов тестирования. Анализ современных подходов и инструментов.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">AI Testing</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="link-demo">
+                            <i class="fas fa-external-link-alt"></i> Демо
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title" data-ru="Образование" data-en="Education">Образование</h2>
+        <div class="education-container">
+            <div class="education-item">
+                <h3 data-ru="Тестирование ПО" data-en="Software Testing">Тестирование ПО</h3>
+                <span class="institution" data-ru="Нетология, 2025" data-en="Netology, 2025">Нетология, 2025</span>
+                <span class="period" data-ru="Курс по тестированию" data-en="Testing Engineering Course">Курс по тестированию</span>
+                <p data-ru="Освоение методологий ручного и автоматизированного тестирования, инструментов тестирования, работы с тестовой документацией и системами контроля версий." 
+                   data-en="Mastering manual and automated testing methodologies, testing tools, test documentation and version control systems.">
+                    Освоение методологий ручного и автоматизированного тестирования, инструментов тестирования, работы с тестовой документацией и системами контроля версий.
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3 data-ru="Информационные системы" data-en="Information Systems">Информационные системы</h3>
+                <span class="institution" data-ru="Высшее образование" data-en="Higher Education">Высшее образование</span>
+                <span class="period" data-ru="Инженерия и экономика" data-en="Engineering and Economics">Инженерия и экономика</span>
+                <p data-ru="Получение фундаментальных знаний в области информационных технологий, системного анализа, программирования и экономики." 
+                   data-en="Acquiring fundamental knowledge in information technology, systems analysis, programming and economics.">
+                    Получение фундаментальных знаний в области информационных технологий, системного анализа, программирования и экономики.
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3 data-ru="Постоянное обучение" data-en="Continuous Learning">Постоянное обучение</h3>
+                <span class="institution" data-ru="Саморазвитие" data-en="Self-Development">Саморазвитие</span>
+                <span class="period" data-ru="2024 - настоящее время" data-en="2024 - Present">2024 - настоящее время</span>
+                <p data-ru="Изучение современных технологий в области искусственного интеллекта, машинного обучения, облачных вычислений и передовых методов разработки программного обеспечения." 
+                   data-en="Studying modern technologies in artificial intelligence, machine learning, cloud computing and advanced software development methods.">
+                    Изучение современных технологий в области искусственного интеллекта, машинного обучения, облачных вычислений и передовых методов разработки программного обеспечения.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: linear-gradient(180deg, var(--light-bg) 0%, #e8f4ff 100%);">
+        <h2 class="section-title" data-ru="Контакты" data-en="Contact">Контакты</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Email" data-en="Email">Email</h3>
+                        <a href="mailto:89080251938@yandex.com">89080251938@yandex.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Телефон" data-en="Phone">Телефон</h3>
+                        <a href="tel:+79080251938">+7 (908) 025-19-38</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="GitHub" data-en="GitHub">GitHub</h3>
+                        <a href="https://github.com/Kyklina-Irina" target="_blank">github.com/Kyklina-Irina</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Местоположение" data-en="Location">Местоположение</h3>
+                        <p data-ru="Ачинск, Россия" data-en="Achinsk, Russia">Ачинск, Россия</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-ru="Ваше имя" data-en="Your Name">Ваше имя</label>
+                        <input type="text" id="name" class="form-control" required 
+                               placeholder="Введите ваше имя" 
+                               data-ru="Введите ваше имя" data-en="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-ru="Email" data-en="Email">Email</label>
+                        <input type="email" id="email" class="form-control" required 
+                               placeholder="Введите ваш email" 
+                               data-ru="Введите ваш email" data-en="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
+                        <textarea id="message" class="form-control" required 
+                                  placeholder="Напишите ваше сообщение..." 
+                                  data-ru="Напишите ваше сообщение..." data-en="Write your message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-ru="Отправить сообщение" data-en="Send Message">
+                        Отправить сообщение
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/Kyklina-Irina" class="social-link" target="_blank" 
+                   title="GitHub" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:89080251938@yandex.com" class="social-link" 
+                   title="Email" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+79080251938" class="social-link" 
+                   title="Phone" aria-label="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <p class="copyright" data-ru="© 2026 Куклина Ирина. Все права защищены." 
+               data-en="© 2026 Kuklina Irina. All rights reserved.">
+                © 2026 Куклина Ирина. Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
+            body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            themeToggle.innerHTML = isDark ? 
+                '<i class="fas fa-sun"></i>' : 
+                '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Language Switch
+        const languageButtons = document.querySelectorAll('.language-switch button');
+        const translatableElements = document.querySelectorAll('[data-ru][data-en]');
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                
+                // Update active button
+                languageButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Update all translatable elements
+                translatableElements.forEach(element => {
+                    if (lang === 'en') {
+                        element.textContent = element.getAttribute('data-en');
+                    } else {
+                        element.textContent = element.getAttribute('data-ru');
+                    }
+                });
+
+                // Save language preference
+                localStorage.setItem('language', lang);
+            });
+        });
+
+        // Load saved language preference
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage === 'en') {
+            document.querySelector('.language-switch button[data-lang="en"]').click();
+        }
+
+        // Animate skill bars on scroll
+        const skillProgressBars = document.querySelectorAll('.skill-progress');
+        
+        const animateSkills = () => {
+            skillProgressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width;
+            });
+        };
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'skills') {
+                        animateSkills();
+                    }
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.');
+                contactForm.reset();
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = body.classList.contains('dark-theme') ? 
+                    'rgba(30, 30, 46, 0.98)' : 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = body.classList.contains('dark-theme') ? 
+                    'rgba(30, 30, 46, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+    </script>
+</body>
+</html>
