@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Color Variables - Сине-фиолетовая тема */
+        /* Color Variables - Нежные пастельные тона */
         :root {
-            --bg-primary: #0d0a25;
-            --bg-secondary: #16123a;
-            --bg-tertiary: #1f1a50;
-            --gradient-primary: linear-gradient(135deg, #8a2be2 0%, #9370db 50%, #d8bfd8 100%);
-            --gradient-secondary: linear-gradient(135deg, #4169e1 0%, #1e90ff 100%);
-            --gradient-accent: linear-gradient(135deg, #ff69b4 0%, #ffb6c1 100%);
-            --text-light: #f0e6ff;
-            --card-bg: rgba(25, 20, 60, 0.85);
-            --card-border: rgba(138, 43, 226, 0.4);
-            --shadow-neon: 0 0 25px rgba(138, 43, 226, 0.5);
+            --bg-primary: #0a081a;
+            --bg-secondary: #120f28;
+            --bg-tertiary: #1a1535;
+            --gradient-primary: linear-gradient(135deg, #c7b1e3 0%, #d8c1f0 50%, #e9d1fc 100%);
+            --gradient-secondary: linear-gradient(135deg, #a8d8ff 0%, #c4e4ff 100%);
+            --gradient-accent: linear-gradient(135deg, #ffcdd2 0%, #ffe4e1 100%);
+            --gradient-purple: linear-gradient(135deg, #d1c4e9 0%, #e1d5f0 100%);
+            --text-light: #f5f5ff;
+            --text-blue: #a8d8ff;
+            --text-purple: #d1c4e9;
+            --text-pink: #ffcdd2;
+            --card-bg: rgba(25, 20, 55, 0.88);
+            --card-border: rgba(199, 177, 227, 0.4);
+            --shadow-neon: 0 0 25px rgba(199, 177, 227, 0.4);
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -46,8 +50,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 15% 25%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(65, 105, 225, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 15% 25%, rgba(168, 216, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(209, 196, 233, 0.12) 0%, transparent 45%);
             z-index: -2;
         }
 
@@ -66,6 +70,33 @@
             );
             z-index: -1;
             opacity: 0.95;
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatParticle linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(var(--offset)) rotate(var(--rotate));
+                opacity: 0;
+            }
         }
 
         /* Elegant Script Font for Headers */
@@ -91,7 +122,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(13, 10, 37, 0.97);
+            background: rgba(10, 8, 26, 0.97);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
@@ -106,7 +137,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+            text-shadow: 0 0 15px rgba(199, 177, 227, 0.5);
             letter-spacing: 2px;
         }
 
@@ -161,7 +192,7 @@
         .language-switch {
             display: flex;
             gap: 1rem;
-            background: rgba(138, 43, 226, 0.2);
+            background: rgba(199, 177, 227, 0.2);
             padding: 0.3rem 0.5rem;
             border-radius: 25px;
             border: 1px solid var(--card-border);
@@ -203,6 +234,7 @@
             max-width: 850px;
             animation: fadeInUp 1s ease-out;
             z-index: 1;
+            margin-top: 2cm; /* Опущено на 2 см */
         }
 
         .hero h1 {
@@ -213,7 +245,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            text-shadow: 0 0 30px rgba(199, 177, 227, 0.6);
             font-weight: 700;
             letter-spacing: 2px;
             line-height: 1.1;
@@ -282,12 +314,12 @@
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
-            box-shadow: 0 0 35px rgba(138, 43, 226, 0.7);
+            box-shadow: 0 0 35px rgba(199, 177, 227, 0.6);
         }
 
         .btn-primary:hover {
             transform: translateY(-7px) scale(1.07);
-            box-shadow: 0 0 45px rgba(138, 43, 226, 0.9);
+            box-shadow: 0 0 45px rgba(199, 177, 227, 0.8);
         }
 
         .btn-secondary {
@@ -295,25 +327,25 @@
             border: 2px solid;
             border-image: var(--gradient-secondary);
             border-image-slice: 1;
-            color: #4169e1;
-            box-shadow: 0 0 25px rgba(65, 105, 225, 0.4);
+            color: #a8d8ff;
+            box-shadow: 0 0 25px rgba(168, 216, 255, 0.4);
         }
 
         .btn-secondary:hover {
             background: var(--gradient-secondary);
             color: white;
             transform: translateY(-7px) scale(1.07);
-            box-shadow: 0 0 35px rgba(65, 105, 225, 0.6);
+            box-shadow: 0 0 35px rgba(168, 216, 255, 0.6);
         }
 
         /* Floating Elements */
         .floating-circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(199, 177, 227, 0.2) 0%, transparent 70%);
             animation: float 20s ease-in-out infinite;
             z-index: 0;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         .circle-1 {
@@ -373,7 +405,7 @@
             background-clip: text;
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+            text-shadow: 0 0 25px rgba(199, 177, 227, 0.5);
         }
 
         .section-title::after {
@@ -432,7 +464,7 @@
             font-size: 1.3rem;
             margin: 1.5rem 0;
             letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            box-shadow: 0 0 20px rgba(255, 205, 210, 0.5);
         }
 
         /* Simple Skills Section */
@@ -462,155 +494,97 @@
 
         .skill-tag:hover {
             transform: translateY(-5px);
-            background: rgba(138, 43, 226, 0.2);
-            border-color: rgba(138, 43, 226, 0.7);
-            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+            background: rgba(199, 177, 227, 0.25);
+            border-color: rgba(199, 177, 227, 0.7);
+            box-shadow: 0 8px 25px rgba(199, 177, 227, 0.4);
         }
 
         .skill-ai {
-            background: rgba(255, 105, 180, 0.15);
-            border-color: rgba(255, 105, 180, 0.6);
+            background: rgba(255, 205, 210, 0.15);
+            border-color: rgba(255, 205, 210, 0.6);
         }
 
         .skill-1c {
-            background: rgba(65, 105, 225, 0.15);
-            border-color: rgba(65, 105, 225, 0.6);
+            background: rgba(168, 216, 255, 0.15);
+            border-color: rgba(168, 216, 255, 0.6);
         }
 
         .skill-office {
-            background: rgba(147, 112, 219, 0.15);
-            border-color: rgba(147, 112, 219, 0.6);
+            background: rgba(209, 196, 233, 0.15);
+            border-color: rgba(209, 196, 233, 0.6);
         }
 
-        /* Experience Section - From Resume */
-        .timeline {
-            position: relative;
+        /* Experience Section - Card Layout (like Education) */
+        .experience-container {
             max-width: 950px;
             margin: 0 auto;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3.5rem;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: slideIn 0.8s ease-out forwards;
-        }
-
-        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
-        .timeline-item:nth-child(5) { animation-delay: 1.0s; }
-
-        .timeline-content {
+        .experience-item {
             background: var(--card-bg);
-            padding: 2.2rem;
+            padding: 2.4rem;
             border-radius: 22px;
+            margin-bottom: 2.8rem;
             box-shadow: var(--shadow-neon);
             border: 1.5px solid var(--card-border);
             backdrop-filter: blur(10px);
-            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease-out forwards;
             transition: var(--transition);
         }
 
-        .timeline-content:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
-            border-color: rgba(138, 43, 226, 0.7);
+        .experience-item:hover {
+            transform: translateX(-30px) translateY(-8px);
+            box-shadow: 0 15px 50px rgba(199, 177, 227, 0.65);
+            border-color: rgba(199, 177, 227, 0.7);
         }
 
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            top: 28px;
-            z-index: 1;
-            box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
-        }
+        .experience-item:nth-child(1) { animation-delay: 0.2s; }
+        .experience-item:nth-child(2) { animation-delay: 0.4s; }
+        .experience-item:nth-child(3) { animation-delay: 0.6s; }
+        .experience-item:nth-child(4) { animation-delay: 0.8s; }
+        .experience-item:nth-child(5) { animation-delay: 1.0s; }
 
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: 100%;
-            transform: translateX(50%);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: 100%;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 55%;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 55%;
-        }
-
-        .timeline-date {
-            position: absolute;
-            top: 28px;
+        .experience-item h3 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 0.7rem;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 1.2rem;
-            letter-spacing: 0.8px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-date {
-            left: -130px;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) .timeline-date {
-            right: -130px;
-            text-align: left;
-        }
-
-        .timeline-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.9rem;
-            margin-bottom: 0.7rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-weight: 700;
             letter-spacing: 0.8px;
         }
 
-        .timeline-content .company {
+        .experience-item .company {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 700;
+            color: #ffcdd2;
             margin-bottom: 1rem;
-            color: #ffb6c1;
             display: block;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
         }
 
-        .timeline-content p {
-            margin-bottom: 0.8rem;
+        .experience-item .period {
+            display: inline-block;
+            background: rgba(199, 177, 227, 0.2);
+            color: #c7b1e3;
+            padding: 0.45rem 1.4rem;
+            border-radius: 30px;
+            margin-bottom: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border: 1.5px solid rgba(199, 177, 227, 0.5);
+            letter-spacing: 0.8px;
+        }
+
+        .experience-item p {
             line-height: 1.9;
             color: var(--text-light);
             opacity: 0.95;
@@ -641,8 +615,8 @@
 
         .education-item:hover {
             transform: translateX(-30px) translateY(-8px);
-            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
-            border-color: rgba(138, 43, 226, 0.7);
+            box-shadow: 0 15px 50px rgba(199, 177, 227, 0.65);
+            border-color: rgba(199, 177, 227, 0.7);
         }
 
         .education-item:nth-child(1) { animation-delay: 0.2s; }
@@ -667,7 +641,7 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 700;
-            color: #ffb6c1;
+            color: #ffcdd2;
             margin-bottom: 1rem;
             display: block;
             font-size: 1.35rem;
@@ -675,8 +649,8 @@
 
         .education-item .period {
             display: inline-block;
-            background: rgba(138, 43, 226, 0.2);
-            color: #4169e1;
+            background: rgba(199, 177, 227, 0.2);
+            color: #c7b1e3;
             padding: 0.45rem 1.4rem;
             border-radius: 30px;
             margin-bottom: 1.3rem;
@@ -684,7 +658,7 @@
             font-style: italic;
             font-size: 1.05rem;
             font-weight: 700;
-            border: 1.5px solid rgba(138, 43, 226, 0.5);
+            border: 1.5px solid rgba(199, 177, 227, 0.5);
             letter-spacing: 0.8px;
         }
 
@@ -736,8 +710,8 @@
 
         .contact-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
-            border-color: rgba(138, 43, 226, 0.7);
+            box-shadow: 0 15px 50px rgba(199, 177, 227, 0.65);
+            border-color: rgba(199, 177, 227, 0.7);
         }
 
         .contact-icon {
@@ -751,7 +725,7 @@
             color: white;
             font-size: 1.7rem;
             flex-shrink: 0;
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+            box-shadow: 0 0 30px rgba(199, 177, 227, 0.7);
         }
 
         .contact-details h3 {
@@ -810,7 +784,7 @@
         .form-control {
             width: 100%;
             padding: 1.1rem 1.6rem;
-            border: 2px solid rgba(138, 43, 226, 0.5);
+            border: 2px solid rgba(199, 177, 227, 0.5);
             border-radius: 18px;
             font-size: 1.1rem;
             background: rgba(30, 25, 70, 0.7);
@@ -824,7 +798,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--gradient-primary);
-            box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.4);
+            box-shadow: 0 0 0 4px rgba(199, 177, 227, 0.4);
         }
 
         textarea.form-control {
@@ -846,17 +820,17 @@
             transition: var(--transition);
             width: 100%;
             letter-spacing: 1px;
-            box-shadow: 0 0 35px rgba(138, 43, 226, 0.7);
+            box-shadow: 0 0 35px rgba(199, 177, 227, 0.6);
         }
 
         .submit-btn:hover {
             transform: translateY(-7px) scale(1.05);
-            box-shadow: 0 0 45px rgba(138, 43, 226, 0.9);
+            box-shadow: 0 0 45px rgba(199, 177, 227, 0.8);
         }
 
         /* Footer */
         footer {
-            background: rgba(13, 10, 37, 0.99);
+            background: rgba(10, 8, 26, 0.99);
             padding: 3.5rem 10%;
             text-align: center;
             border-top: 1.5px solid var(--card-border);
@@ -882,7 +856,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #4169e1;
+            color: #a8d8ff;
             font-size: 1.9rem;
             text-decoration: none;
             transition: var(--transition);
@@ -894,13 +868,13 @@
             background: var(--gradient-primary);
             color: white;
             transform: translateY(-10px) rotate(360deg);
-            box-shadow: 0 0 45px rgba(138, 43, 226, 0.85);
+            box-shadow: 0 0 45px rgba(199, 177, 227, 0.85);
             border-color: transparent;
         }
 
         .social-link.telegram {
-            color: #0088cc;
-            background: rgba(0, 136, 204, 0.1);
+            color: #8abaff;
+            background: rgba(138, 186, 255, 0.1);
         }
 
         .social-link.github {
@@ -909,8 +883,8 @@
         }
 
         .social-link.max {
-            color: #ff6b6b;
-            background: rgba(255, 107, 107, 0.1);
+            color: #ffcdd2;
+            background: rgba(255, 205, 210, 0.1);
         }
 
         .copyright {
@@ -985,25 +959,6 @@
             .hero p {
                 font-size: 1.15rem;
             }
-            .timeline::before {
-                left: 35px;
-            }
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 90px;
-                margin-right: 0;
-            }
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -45px;
-            }
-            .timeline-item:nth-child(odd) .timeline-date,
-            .timeline-item:nth-child(even) .timeline-date {
-                left: -150px;
-                right: auto;
-                text-align: right;
-                font-size: 1.05rem;
-            }
             section {
                 padding: 4.5rem 6%;
             }
@@ -1069,17 +1024,6 @@
             .section-title {
                 font-size: 2.3rem;
             }
-            .timeline-item:nth-child(odd) .timeline-date,
-            .timeline-item:nth-child(even) .timeline-date {
-                left: -120px;
-                font-size: 0.95rem;
-            }
-            .timeline-content {
-                padding: 1.9rem;
-            }
-            .timeline-content h3 {
-                font-size: 1.6rem;
-            }
             .social-link {
                 width: 65px;
                 height: 65px;
@@ -1096,6 +1040,49 @@
     <div class="floating-circle circle-1"></div>
     <div class="floating-circle circle-2"></div>
     <div class="floating-circle circle-3"></div>
+
+    <!-- Floating Particles -->
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 80; // Increased number of particles
+            const container = document.body;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size
+                const size = Math.random() * 8 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random horizontal offset
+                const offset = (Math.random() - 0.5) * 200;
+                particle.style.setProperty('--offset', `${offset}px`);
+                
+                // Random rotation
+                const rotate = Math.random() * 360;
+                particle.style.setProperty('--rotate', `${rotate}deg`);
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        window.addEventListener('load', createParticles);
+    </script>
 
     <!-- Header -->
     <header>
@@ -1196,70 +1183,60 @@
         </div>
     </section>
 
-    <!-- Experience Section - From Resume -->
+    <!-- Experience Section - Card Layout (like Education) -->
     <section id="experience">
         <h2 class="section-title" data-ru="ОПЫТ РАБОТЫ" data-en="WORK EXPERIENCE">ОПЫТ РАБОТЫ</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date" data-ru="ЯНВ 2025 - ИЮЛЬ 2025" data-en="JAN 2025 - JUL 2025">ЯНВ 2025 - ИЮЛЬ 2025</span>
-                    <h3 data-ru="ОПЕРАТОР ЕГАИС" data-en="EGAIS OPERATOR">ОПЕРАТОР ЕГАИС</h3>
-                    <span class="company" data-ru="КОМПАНИЯ «КОНТРОЛЬ»" data-en="COMPANY «KONTROL»">КОМПАНИЯ «КОНТРОЛЬ»</span>
-                    <p data-ru="Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности." 
-                       data-en="Working with the EGAIS system, accounting for alcohol products, generating reports.">
-                        Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности.
-                    </p>
-                </div>
+        <div class="experience-container">
+            <div class="experience-item">
+                <h3 data-ru="ОПЕРАТОР ЕГАИС" data-en="EGAIS OPERATOR">ОПЕРАТОР ЕГАИС</h3>
+                <span class="company" data-ru="КОМПАНИЯ «КОНТРОЛЬ»" data-en="COMPANY «KONTROL»">КОМПАНИЯ «КОНТРОЛЬ»</span>
+                <span class="period" data-ru="ЯНВАРЬ 2025 — ИЮЛЬ 2025" data-en="JANUARY 2025 — JULY 2025">ЯНВАРЬ 2025 — ИЮЛЬ 2025</span>
+                <p data-ru="Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности." 
+                   data-en="Working with the EGAIS system, accounting for alcohol products, generating reports.">
+                    Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности.
+                </p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date" data-ru="ОКТ 2023 - ОКТ 2024" data-en="OCT 2023 - OCT 2024">ОКТ 2023 - ОКТ 2024</span>
-                    <h3 data-ru="ОПЕРАТОР-КАССИР" data-en="CASHIER OPERATOR">ОПЕРАТОР-КАССИР</h3>
-                    <span class="company" data-ru="ООО «ВИКО-КРАСНОЯРСК»" data-en="LLC «VIKO-KRASNOYARSK»">ООО «ВИКО-КРАСНОЯРСК»</span>
-                    <p data-ru="Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами." 
-                       data-en="Cashier work, customer service, receiving and issuing goods, handling cash.">
-                        Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами.
-                    </p>
-                </div>
+            <div class="experience-item">
+                <h3 data-ru="ОПЕРАТОР-КАССИР" data-en="CASHIER OPERATOR">ОПЕРАТОР-КАССИР</h3>
+                <span class="company" data-ru="ООО «ВИКО-КРАСНОЯРСК»" data-en="LLC «VIKO-KRASNOYARSK»">ООО «ВИКО-КРАСНОЯРСК»</span>
+                <span class="period" data-ru="ОКТЯБРЬ 2023 — ОКТЯБРЬ 2024" data-en="OCTOBER 2023 — OCTOBER 2024">ОКТЯБРЬ 2023 — ОКТЯБРЬ 2024</span>
+                <p data-ru="Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами." 
+                   data-en="Cashier work, customer service, receiving and issuing goods, handling cash.">
+                    Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами.
+                </p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date" data-ru="МАР 2014 - АПР 2023" data-en="MAR 2014 - APR 2023">МАР 2014 - АПР 2023</span>
-                    <h3 data-ru="ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С" data-en="1C OPERATOR → 1C CASHIER OPERATOR">ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С</h3>
-                    <span class="company" data-ru="ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»" data-en="LLC «TD BIRTREYD» → LLC «BIRTREYD» → LLC «BELY OSTROV»">
-                        ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»
-                    </span>
-                    <p data-ru="Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами." 
-                       data-en="Working with 1C:Enterprise system, maintaining primary documentation, processing orders, cash operations, interacting with suppliers and clients.">
-                        Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами.
-                    </p>
-                </div>
+            <div class="experience-item">
+                <h3 data-ru="ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С" data-en="1C OPERATOR → 1C CASHIER OPERATOR">ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С</h3>
+                <span class="company" data-ru="ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»" data-en="LLC «TD BIRTREYD» → LLC «BIRTREYD» → LLC «BELY OSTROV»">
+                    ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»
+                </span>
+                <span class="period" data-ru="МАРТ 2014 — АПРЕЛЬ 2023" data-en="MARCH 2014 — APRIL 2023">МАРТ 2014 — АПРЕЛЬ 2023</span>
+                <p data-ru="Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами." 
+                   data-en="Working with 1C:Enterprise system, maintaining primary documentation, processing orders, cash operations, interacting with suppliers and clients.">
+                    Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами.
+                </p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date" data-ru="МАЙ 2012 - ФЕВ 2014" data-en="MAY 2012 - FEB 2014">МАЙ 2012 - ФЕВ 2014</span>
-                    <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
-                    <span class="company" data-ru="ООО «РИТМ»" data-en="LLC «RITM»">ООО «РИТМ»</span>
-                    <p data-ru="Работа с офисным оборудованием, обработка данных, ведение электронной документации." 
-                       data-en="Working with office equipment, data processing, maintaining electronic documentation.">
-                        Работа с офисным оборудованием, обработка данных, ведение электронной документации.
-                    </p>
-                </div>
+            <div class="experience-item">
+                <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
+                <span class="company" data-ru="ООО «РИТМ»" data-en="LLC «RITM»">ООО «РИТМ»</span>
+                <span class="period" data-ru="МАЙ 2012 — ФЕВРАЛЬ 2014" data-en="MAY 2012 — FEBRUARY 2014">МАЙ 2012 — ФЕВРАЛЬ 2014</span>
+                <p data-ru="Работа с офисным оборудованием, обработка данных, ведение электронной документации." 
+                   data-en="Working with office equipment, data processing, maintaining electronic documentation.">
+                    Работа с офисным оборудованием, обработка данных, ведение электронной документации.
+                </p>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date" data-ru="АПР 2011 - АПР 2012" data-en="APR 2011 - APR 2012">АПР 2011 - АПР 2012</span>
-                    <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
-                    <span class="company" data-ru="ООО «МИР ПРОДОВОЛЬСТВИЯ»" data-en="LLC «MIR PRODOVOLSTVIYA»">ООО «МИР ПРОДОВОЛЬСТВИЯ»</span>
-                    <p data-ru="Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально)." 
-                       data-en="Working with documentation, data processing, supporting office processes (worked unofficially from July 2010).">
-                        Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально).
-                    </p>
-                </div>
+            <div class="experience-item">
+                <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
+                <span class="company" data-ru="ООО «МИР ПРОДОВОЛЬСТВИЯ»" data-en="LLC «MIR PRODOVOLSTVIYA»">ООО «МИР ПРОДОВОЛЬСТВИЯ»</span>
+                <span class="period" data-ru="АПРЕЛЬ 2011 — АПРЕЛЬ 2012" data-en="APRIL 2011 — APRIL 2012">АПРЕЛЬ 2011 — АПРЕЛЬ 2012</span>
+                <p data-ru="Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально)." 
+                   data-en="Working with documentation, data processing, supporting office processes (worked unofficially from July 2010).">
+                    Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально).
+                </p>
             </div>
         </div>
     </section>
@@ -1513,11 +1490,11 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 35px rgba(138, 43, 226, 0.5)';
-                header.style.background = 'rgba(13, 10, 37, 0.99)';
+                header.style.boxShadow = '0 5px 35px rgba(199, 177, 227, 0.5)';
+                header.style.background = 'rgba(10, 8, 26, 0.99)';
             } else {
                 header.style.boxShadow = 'none';
-                header.style.background = 'rgba(13, 10, 37, 0.97)';
+                header.style.background = 'rgba(10, 8, 26, 0.97)';
             }
         });
     </script>
