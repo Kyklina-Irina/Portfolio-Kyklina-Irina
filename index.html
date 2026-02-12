@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Куклина Ирина | Portfolio</title>
+    <title>Куклина Ирина | AI Enthusiast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Color Variables - Сине-фиолетовая тема с неоновыми акцентами */
+        /* Color Variables - Сине-фиолетовая тема */
         :root {
-            --bg-primary: #0f0c29;
-            --bg-secondary: #1a1640;
-            --bg-tertiary: #241f5c;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-accent: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            --gradient-purple: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-            --gradient-cyan: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --text-neon-pink: #ff10f0;
-            --text-neon-blue: #00f0ff;
-            --text-neon-purple: #d800ff;
-            --text-light: #e0e0ff;
-            --card-bg: rgba(30, 25, 60, 0.8);
-            --card-border: rgba(102, 126, 234, 0.3);
-            --shadow-neon: 0 0 20px rgba(102, 126, 234, 0.5);
+            --bg-primary: #0d0a25;
+            --bg-secondary: #16123a;
+            --bg-tertiary: #1f1a50;
+            --gradient-primary: linear-gradient(135deg, #8a2be2 0%, #9370db 50%, #d8bfd8 100%);
+            --gradient-secondary: linear-gradient(135deg, #4169e1 0%, #1e90ff 100%);
+            --gradient-accent: linear-gradient(135deg, #ff69b4 0%, #ffb6c1 100%);
+            --text-light: #f0e6ff;
+            --card-bg: rgba(25, 20, 60, 0.85);
+            --card-border: rgba(138, 43, 226, 0.4);
+            --shadow-neon: 0 0 25px rgba(138, 43, 226, 0.5);
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -34,8 +30,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
             overflow-x: hidden;
             background: var(--bg-primary);
             color: var(--text-light);
@@ -50,9 +46,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(79, 172, 254, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 15% 25%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(65, 105, 225, 0.15) 0%, transparent 40%);
             z-index: -2;
         }
 
@@ -73,6 +68,19 @@
             opacity: 0.95;
         }
 
+        /* Elegant Script Font for Headers */
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .playfair-font {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+        }
+
         /* Header & Navigation */
         header {
             position: fixed;
@@ -83,7 +91,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 12, 41, 0.95);
+            background: rgba(13, 10, 37, 0.97);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
@@ -91,21 +99,15 @@
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 2.4rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+            letter-spacing: 2px;
         }
 
         nav ul {
@@ -117,12 +119,14 @@
         nav a {
             text-decoration: none;
             color: var(--text-light);
-            font-weight: 600;
-            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.15rem;
             position: relative;
             padding: 0.5rem 0;
             transition: var(--transition);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         nav a:hover {
@@ -157,7 +161,7 @@
         .language-switch {
             display: flex;
             gap: 1rem;
-            background: rgba(102, 126, 234, 0.15);
+            background: rgba(138, 43, 226, 0.2);
             padding: 0.3rem 0.5rem;
             border-radius: 25px;
             border: 1px solid var(--card-border);
@@ -169,10 +173,12 @@
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
             cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 600;
             transition: var(--transition);
             color: var(--text-light);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .language-switch button.active {
@@ -194,78 +200,94 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             animation: fadeInUp 1s ease-out;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5rem;
+            margin-bottom: 1.2rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(102, 126, 234, 0.7);
-            font-weight: 900;
-            letter-spacing: -1px;
+            text-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            font-weight: 700;
+            letter-spacing: 2px;
             line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: 2.2rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.4rem;
             margin-bottom: 2rem;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 2.5rem;
             color: var(--text-light);
-            opacity: 0.9;
-            max-width: 700px;
+            opacity: 0.95;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.8;
+            line-height: 1.9;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .highlight-ai {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-style: italic;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 30px;
+            padding: 1.1rem 2.8rem;
+            border-radius: 35px;
             text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: var(--transition);
             cursor: pointer;
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            gap: 0.8rem;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
         }
 
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
-            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 0 35px rgba(138, 43, 226, 0.7);
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+            transform: translateY(-7px) scale(1.07);
+            box-shadow: 0 0 45px rgba(138, 43, 226, 0.9);
         }
 
         .btn-secondary {
@@ -273,55 +295,56 @@
             border: 2px solid;
             border-image: var(--gradient-secondary);
             border-image-slice: 1;
-            color: var(--text-neon-blue);
-            box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+            color: #4169e1;
+            box-shadow: 0 0 25px rgba(65, 105, 225, 0.4);
         }
 
         .btn-secondary:hover {
             background: var(--gradient-secondary);
             color: white;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 30px rgba(79, 172, 254, 0.5);
+            transform: translateY(-7px) scale(1.07);
+            box-shadow: 0 0 35px rgba(65, 105, 225, 0.6);
         }
 
         /* Floating Elements */
         .floating-circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
-            animation: float 15s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
             z-index: 0;
+            opacity: 0.6;
         }
 
         .circle-1 {
-            width: 300px;
-            height: 300px;
-            top: -100px;
-            right: -50px;
+            width: 350px;
+            height: 350px;
+            top: -120px;
+            right: -80px;
             animation-delay: 0s;
         }
 
         .circle-2 {
-            width: 200px;
-            height: 200px;
-            bottom: -50px;
-            left: 10%;
-            animation-delay: -5s;
+            width: 250px;
+            height: 250px;
+            bottom: -80px;
+            left: 5%;
+            animation-delay: -7s;
         }
 
         .circle-3 {
-            width: 150px;
-            height: 150px;
-            top: 40%;
-            right: 15%;
-            animation-delay: -10s;
+            width: 180px;
+            height: 180px;
+            top: 45%;
+            right: 12%;
+            animation-delay: -14s;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.3; }
-            25% { transform: translateY(-30px) translateX(20px) rotate(90deg); opacity: 0.5; }
-            50% { transform: translateY(-50px) translateX(0) rotate(180deg); opacity: 0.7; }
-            75% { transform: translateY(-30px) translateX(-20px) rotate(270deg); opacity: 0.5; }
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-40px) translateX(30px) rotate(90deg); }
+            50% { transform: translateY(-60px) translateX(0) rotate(180deg); }
+            75% { transform: translateY(-40px) translateX(-30px) rotate(270deg); }
         }
 
         /* Section Base */
@@ -335,19 +358,9 @@
             overflow: hidden;
         }
 
-        section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
-            z-index: -1;
-        }
-
         .section-title {
-            font-size: 3rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8rem;
             margin-bottom: 4rem;
             text-align: center;
             position: relative;
@@ -358,160 +371,121 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 120px;
             height: 4px;
             background: var(--gradient-secondary);
             border-radius: 2px;
         }
 
-        /* About Section */
+        /* About Section - AI Focus */
         .about-content {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             text-align: center;
         }
 
         .about-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            margin-bottom: 2.5rem;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
+            font-weight: 700;
+            letter-spacing: 1.5px;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
-            line-height: 1.9;
+            margin-bottom: 1.8rem;
+            font-size: 1.25rem;
+            line-height: 2;
             color: var(--text-light);
             opacity: 0.95;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .highlight {
+        .ai-badge {
+            display: inline-block;
             background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
+            font-size: 1.3rem;
+            margin: 1.5rem 0;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
         }
 
-        /* Skills Section */
+        /* Simple Skills Section */
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .skill-category {
+        .skill-tag {
             background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-neon);
-            backdrop-filter: blur(10px);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: slideIn 0.8s ease-out forwards;
-        }
-
-        .skill-category:nth-child(1) { animation-delay: 0.2s; }
-        .skill-category:nth-child(2) { animation-delay: 0.4s; }
-        .skill-category:nth-child(3) { animation-delay: 0.6s; }
-
-        .skill-category h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            background: var(--gradient-purple);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            font-weight: 800;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .skill-category h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-secondary);
-            border-radius: 2px;
-        }
-
-        .skill-item {
-            margin-bottom: 1.8rem;
-        }
-
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.8rem;
-            align-items: center;
-        }
-
-        .skill-name {
-            font-weight: 700;
-            font-size: 1.15rem;
+            border: 1.5px solid var(--card-border);
             color: var(--text-light);
-            background: var(--gradient-cyan);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            padding: 0.9rem 2.2rem;
+            border-radius: 40px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.8px;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
         }
 
-        .skill-level {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+        .skill-tag:hover {
+            transform: translateY(-5px);
+            background: rgba(138, 43, 226, 0.2);
+            border-color: rgba(138, 43, 226, 0.7);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
         }
 
-        .skill-bar {
-            width: 100%;
-            height: 10px;
-            background: rgba(102, 126, 234, 0.15);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 0.7rem;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+        .skill-ai {
+            background: rgba(255, 105, 180, 0.15);
+            border-color: rgba(255, 105, 180, 0.6);
         }
 
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 10px;
-            width: 0;
-            transition: width 1.5s ease-out;
-            box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+        .skill-1c {
+            background: rgba(65, 105, 225, 0.15);
+            border-color: rgba(65, 105, 225, 0.6);
         }
 
-        /* Experience Section */
+        .skill-office {
+            background: rgba(147, 112, 219, 0.15);
+            border-color: rgba(147, 112, 219, 0.6);
+        }
+
+        /* Experience Section - From Resume */
         .timeline {
             position: relative;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
@@ -529,7 +503,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
             opacity: 0;
             transform: translateY(30px);
             animation: slideIn 0.8s ease-out forwards;
@@ -539,13 +513,14 @@
         .timeline-item:nth-child(2) { animation-delay: 0.4s; }
         .timeline-item:nth-child(3) { animation-delay: 0.6s; }
         .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(5) { animation-delay: 1.0s; }
 
         .timeline-content {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
+            padding: 2.2rem;
+            border-radius: 22px;
             box-shadow: var(--shadow-neon);
-            border: 1px solid var(--card-border);
+            border: 1.5px solid var(--card-border);
             backdrop-filter: blur(10px);
             position: relative;
             transition: var(--transition);
@@ -553,20 +528,20 @@
 
         .timeline-content:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
-            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
+            border-color: rgba(138, 43, 226, 0.7);
         }
 
         .timeline-content::before {
             content: '';
             position: absolute;
-            width: 25px;
-            height: 25px;
+            width: 28px;
+            height: 28px;
             background: var(--gradient-primary);
             border-radius: 50%;
-            top: 25px;
+            top: 28px;
             z-index: 1;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.7);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
         }
 
         .timeline-item:nth-child(odd) .timeline-content::before {
@@ -589,231 +564,74 @@
 
         .timeline-date {
             position: absolute;
-            top: 25px;
+            top: 28px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 1.05rem;
+            font-size: 1.2rem;
+            letter-spacing: 0.8px;
         }
 
         .timeline-item:nth-child(odd) .timeline-date {
-            left: -120px;
+            left: -130px;
             text-align: right;
         }
 
         .timeline-item:nth-child(even) .timeline-date {
-            right: -120px;
+            right: -130px;
             text-align: left;
         }
 
         .timeline-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.9rem;
+            margin-bottom: 0.7rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
+            font-weight: 700;
+            letter-spacing: 0.8px;
         }
 
         .timeline-content .company {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
-            margin-bottom: 1.2rem;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: #ffb6c1;
             display: block;
+            font-size: 1.3rem;
         }
 
         .timeline-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            line-height: 1.9;
             color: var(--text-light);
             opacity: 0.95;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
         }
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 3rem;
-            justify-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: var(--shadow-neon);
-            width: 100%;
-            max-width: 500px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: slideIn 0.8s ease-out forwards;
-            transition: var(--transition);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.7);
-            border-color: rgba(102, 126, 234, 0.6);
-        }
-
-        .project-card:nth-child(1) { animation-delay: 0.2s; }
-        .project-card:nth-child(2) { animation-delay: 0.4s; }
-        .project-card:nth-child(3) { animation-delay: 0.6s; }
-
-        .project-icon {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(240, 147, 251, 0.2) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-icon::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: var(--gradient-primary);
-            animation: rotate 6s linear infinite;
-            opacity: 0.2;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .project-icon i {
-            font-size: 6rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
-        }
-
-        .project-info {
-            padding: 2.5rem;
-        }
-
-        .project-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .project-info p {
-            margin-bottom: 1.8rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            opacity: 0.95;
-            font-size: 1.05rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-bottom: 2rem;
-        }
-
-        .tag {
-            background: rgba(102, 126, 234, 0.2);
-            color: var(--text-neon-blue);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            border: 1px solid rgba(102, 126, 234, 0.4);
-            transition: var(--transition);
-        }
-
-        .tag:hover {
-            background: var(--gradient-primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-        }
-
-        .project-links a {
-            padding: 0.9rem 2rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: var(--transition);
-            border: 2px solid;
-        }
-
-        .link-github {
-            border-image: var(--gradient-secondary);
-            border-image-slice: 1;
-            color: var(--text-neon-blue);
-            background: rgba(79, 172, 254, 0.1);
-        }
-
-        .link-github:hover {
-            background: var(--gradient-secondary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.6);
-        }
-
-        .link-demo {
-            border-image: var(--gradient-accent);
-            border-image-slice: 1;
-            color: var(--text-neon-pink);
-            background: rgba(255, 144, 240, 0.1);
-        }
-
-        .link-demo:hover {
-            background: var(--gradient-accent);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 144, 240, 0.6);
-        }
-
-        /* Education Section */
+        /* Education Section - From Resume */
         .education-container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
         .education-item {
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            margin-bottom: 2.5rem;
+            padding: 2.4rem;
+            border-radius: 22px;
+            margin-bottom: 2.8rem;
             box-shadow: var(--shadow-neon);
-            border: 1px solid var(--card-border);
+            border: 1.5px solid var(--card-border);
             backdrop-filter: blur(10px);
             opacity: 0;
             transform: translateX(-30px);
@@ -823,52 +641,60 @@
 
         .education-item:hover {
             transform: translateX(-30px) translateY(-8px);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
-            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
+            border-color: rgba(138, 43, 226, 0.7);
         }
 
         .education-item:nth-child(1) { animation-delay: 0.2s; }
         .education-item:nth-child(2) { animation-delay: 0.4s; }
         .education-item:nth-child(3) { animation-delay: 0.6s; }
+        .education-item:nth-child(4) { animation-delay: 0.8s; }
 
         .education-item h3 {
-            font-size: 1.7rem;
-            margin-bottom: 0.8rem;
-            background: var(--gradient-purple);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            margin-bottom: 0.7rem;
+            background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
+            font-weight: 700;
+            letter-spacing: 0.8px;
         }
 
         .education-item .institution {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffb6c1;
             margin-bottom: 1rem;
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.35rem;
         }
 
         .education-item .period {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.2);
-            color: var(--text-neon-blue);
-            padding: 0.4rem 1.2rem;
-            border-radius: 25px;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            background: rgba(138, 43, 226, 0.2);
+            color: #4169e1;
+            padding: 0.45rem 1.4rem;
+            border-radius: 30px;
+            margin-bottom: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
             font-weight: 700;
-            border: 1px solid rgba(102, 126, 234, 0.4);
+            border: 1.5px solid rgba(138, 43, 226, 0.5);
+            letter-spacing: 0.8px;
         }
 
         .education-item p {
-            line-height: 1.8;
+            line-height: 1.9;
             color: var(--text-light);
             opacity: 0.95;
-            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
         }
 
         /* Contact Section */
@@ -876,14 +702,14 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.2rem;
             opacity: 0;
             transform: translateX(-30px);
             animation: slideInLeft 0.8s ease-out forwards;
@@ -897,45 +723,48 @@
 
         .contact-item {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 2.2rem;
+            border-radius: 22px;
             display: flex;
             align-items: flex-start;
-            gap: 1.5rem;
+            gap: 1.8rem;
             box-shadow: var(--shadow-neon);
-            border: 1px solid var(--card-border);
+            border: 1.5px solid var(--card-border);
             backdrop-filter: blur(10px);
             transition: var(--transition);
         }
 
         .contact-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
-            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 15px 50px rgba(138, 43, 226, 0.65);
+            border-color: rgba(138, 43, 226, 0.7);
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             flex-shrink: 0;
-            box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
         }
 
         .contact-details h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-bottom: 0.9rem;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 700;
+            letter-spacing: 0.8px;
         }
 
         .contact-details p, .contact-details a {
@@ -943,9 +772,12 @@
             text-decoration: none;
             transition: var(--transition);
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
             opacity: 0.95;
+            letter-spacing: 0.6px;
         }
 
         .contact-details a:hover {
@@ -954,97 +786,104 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transform: translateX(8px);
+            transform: translateX(10px);
         }
 
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 700;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.8px;
         }
 
         .form-control {
             width: 100%;
-            padding: 1rem 1.5rem;
-            border: 2px solid rgba(102, 126, 234, 0.4);
-            border-radius: 15px;
-            font-size: 1.05rem;
-            background: rgba(30, 25, 60, 0.6);
+            padding: 1.1rem 1.6rem;
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            border-radius: 18px;
+            font-size: 1.1rem;
+            background: rgba(30, 25, 70, 0.7);
             color: var(--text-light);
             transition: var(--transition);
-            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--gradient-primary);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.4);
         }
 
         textarea.form-control {
-            min-height: 180px;
+            min-height: 190px;
             resize: vertical;
         }
 
         .submit-btn {
             background: var(--gradient-primary);
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1.3rem 3.2rem;
             border: none;
-            border-radius: 30px;
-            font-size: 1.15rem;
+            border-radius: 35px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.25rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             width: 100%;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 30px rgba(102, 126, 234, 0.6);
+            letter-spacing: 1px;
+            box-shadow: 0 0 35px rgba(138, 43, 226, 0.7);
         }
 
         .submit-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+            transform: translateY(-7px) scale(1.05);
+            box-shadow: 0 0 45px rgba(138, 43, 226, 0.9);
         }
 
         /* Footer */
         footer {
-            background: rgba(15, 12, 41, 0.98);
-            padding: 3rem 10%;
+            background: rgba(13, 10, 37, 0.99);
+            padding: 3.5rem 10%;
             text-align: center;
-            border-top: 1px solid var(--card-border);
+            border-top: 1.5px solid var(--card-border);
         }
 
         .footer-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+            gap: 2.3rem;
+            margin-bottom: 2.8rem;
         }
 
         .social-link {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             background: var(--card-bg);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-neon-blue);
-            font-size: 1.8rem;
+            color: #4169e1;
+            font-size: 1.9rem;
             text-decoration: none;
             transition: var(--transition);
             border: 2px solid var(--card-border);
@@ -1054,26 +893,44 @@
         .social-link:hover {
             background: var(--gradient-primary);
             color: white;
-            transform: translateY(-8px) rotate(360deg);
-            box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+            transform: translateY(-10px) rotate(360deg);
+            box-shadow: 0 0 45px rgba(138, 43, 226, 0.85);
             border-color: transparent;
         }
 
+        .social-link.telegram {
+            color: #0088cc;
+            background: rgba(0, 136, 204, 0.1);
+        }
+
+        .social-link.github {
+            color: #f0f0f0;
+            background: rgba(240, 240, 240, 0.1);
+        }
+
+        .social-link.max {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
         .copyright {
-            opacity: 0.7;
-            font-size: 1.05rem;
+            opacity: 0.8;
+            font-size: 1.15rem;
             background: var(--gradient-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
             font-weight: 600;
+            letter-spacing: 1px;
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -1105,13 +962,13 @@
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero h1 {
-                font-size: 3.8rem;
+                font-size: 4.8rem;
             }
             .hero-subtitle {
-                font-size: 1.9rem;
+                font-size: 2.1rem;
             }
-            nav ul {
-                gap: 1.2rem;
+            .hero p {
+                font-size: 1.25rem;
             }
             section {
                 padding: 5rem 8%;
@@ -1120,63 +977,60 @@
 
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3.2rem;
+                font-size: 4rem;
             }
             .hero-subtitle {
-                font-size: 1.7rem;
+                font-size: 1.9rem;
             }
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
             .timeline::before {
-                left: 30px;
+                left: 35px;
             }
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 80px;
+                margin-left: 90px;
                 margin-right: 0;
             }
             .timeline-item:nth-child(odd) .timeline-content::before,
             .timeline-item:nth-child(even) .timeline-content::before {
-                left: -40px;
+                left: -45px;
             }
             .timeline-item:nth-child(odd) .timeline-date,
             .timeline-item:nth-child(even) .timeline-date {
-                left: -140px;
+                left: -150px;
                 right: auto;
                 text-align: right;
-                font-size: 0.95rem;
-            }
-            .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                font-size: 1.05rem;
             }
             section {
-                padding: 4rem 5%;
+                padding: 4.5rem 6%;
             }
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 1rem 5%;
+                padding: 1.2rem 5%;
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.2rem;
             }
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 0.8rem;
+                gap: 0.9rem;
             }
             nav a {
-                font-size: 0.95rem;
+                font-size: 1.05rem;
             }
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3.4rem;
             }
             .hero-subtitle {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
             .hero p {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
             .hero-buttons {
                 flex-direction: column;
@@ -1185,52 +1039,54 @@
             .btn {
                 width: 100%;
                 justify-content: center;
+                font-size: 1.15rem;
             }
             .section-title {
-                font-size: 2.3rem;
+                font-size: 2.8rem;
             }
             .skills-container {
-                grid-template-columns: 1fr;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+            section {
+                padding: 4rem 5%;
             }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.9rem;
             }
             .hero-subtitle {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             .hero p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             .section-title {
-                font-size: 1.9rem;
+                font-size: 2.3rem;
             }
             .timeline-item:nth-child(odd) .timeline-date,
             .timeline-item:nth-child(even) .timeline-date {
-                left: -110px;
-                font-size: 0.85rem;
+                left: -120px;
+                font-size: 0.95rem;
             }
             .timeline-content {
-                padding: 1.8rem;
+                padding: 1.9rem;
             }
             .timeline-content h3 {
-                font-size: 1.5rem;
-            }
-            .project-info h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             .social-link {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
+                width: 65px;
+                height: 65px;
+                font-size: 1.6rem;
+            }
+            .copyright {
+                font-size: 1rem;
             }
         }
     </style>
@@ -1243,13 +1099,12 @@
 
     <!-- Header -->
     <header>
-        <a href="#" class="logo">IRINA<span>.</span></a>
+        <a href="#" class="logo">Irina</a>
         <nav>
             <ul>
-                <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
+                <li><a href="#about" data-ru="Обо мне" data-en="About Me">Обо мне</a></li>
                 <li><a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a></li>
                 <li><a href="#experience" data-ru="Опыт" data-en="Experience">Опыт</a></li>
-                <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
                 <li><a href="#education" data-ru="Образование" data-en="Education">Образование</a></li>
                 <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
             </ul>
@@ -1266,435 +1121,198 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 data-ru="КУКЛИНА ИРИНА" data-en="KUKLINA IRINA">КУКЛИНА ИРИНА</h1>
-            <div class="hero-subtitle" data-ru="QA ENGINEER • JAVA DEVELOPER" data-en="QA ENGINEER • JAVA DEVELOPER">
-                QA ENGINEER • JAVA DEVELOPER
+            <div class="hero-subtitle" data-ru="НАЧИНАЮЩИЙ СПЕЦИАЛИСТ В ОБЛАСТИ ИИ" data-en="BEGINNER AI SPECIALIST">
+                НАЧИНАЮЩИЙ СПЕЦИАЛИСТ В ОБЛАСТИ ИИ
             </div>
-            <p data-ru="Инженер по тестированию программного обеспечения с опытом автоматизации на Java. Специалист в области информационных технологий, 1С и систем автоматизации." 
-               data-en="Software QA Engineer with Java automation experience. IT specialist in 1C and automation systems.">
-                Инженер по тестированию программного обеспечения с опытом автоматизации на Java. Специалист в области информационных технологий, 1С и систем автоматизации.
+            <p data-ru="Страстно увлекаюсь искусственным интеллектом, изучаю современные нейросети и технологии машинного обучения. Активно применяю ИИ-инструменты в повседневной работе и постоянно развиваюсь в этой перспективной сфере." 
+               data-en="Passionately interested in artificial intelligence, studying modern neural networks and machine learning technologies. Actively applying AI tools in daily work and continuously developing in this promising field.">
+                Страстно увлекаюсь искусственным интеллектом, изучаю современные нейросети и технологии машинного обучения. Активно применяю ИИ-инструменты в повседневной работе и постоянно развиваюсь в этой перспективной сфере.
             </p>
+            <div class="ai-badge" data-ru="❤️ Влюблена в мир искусственного интеллекта" data-en="❤️ In love with the world of artificial intelligence">
+                ❤️ Влюблена в мир искусственного интеллекта
+            </div>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary" data-ru="Мои проекты" data-en="My Projects">
-                    <i class="fas fa-code"></i> Мои проекты
-                </a>
-                <a href="#contact" class="btn btn-secondary" data-ru="Связаться" data-en="Contact Me">
-                    <i class="fas fa-paper-plane"></i> Связаться
+                <a href="#contact" class="btn btn-primary" data-ru="Связаться со мной" data-en="Contact Me">
+                    <i class="fas fa-paper-plane"></i> Связаться со мной
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - AI Focus -->
     <section id="about">
         <h2 class="section-title" data-ru="ОБО МНЕ" data-en="ABOUT ME">ОБО МНЕ</h2>
         <div class="about-content">
             <div class="about-text">
                 <h3 data-ru="ПРИВЕТ! Я ИРИНА" data-en="HI! I'M IRINA">ПРИВЕТ! Я ИРИНА</h3>
-                <p data-ru="Я <span class='highlight'>инженер-тестировщик</span> с опытом в автоматизации тестирования на Java, используя современные фреймворки <span class='highlight'>Selenide, JUnit 5, Gradle</span>. Мои ключевые компетенции включают ручное и автоматизированное тестирование, работу с системами непрерывной интеграции и обеспечение качества программного обеспечения." 
-                   data-en="I am a <span class='highlight'>QA Engineer</span> with experience in Java test automation using modern frameworks <span class='highlight'>Selenide, JUnit 5, Gradle</span>. My key competencies include manual and automated testing, working with CI/CD systems and ensuring software quality.">
-                    Я <span class="highlight">инженер-тестировщик</span> с опытом в автоматизации тестирования на Java, используя современные фреймворки <span class="highlight">Selenide, JUnit 5, Gradle</span>. Мои ключевые компетенции включают ручное и автоматизированное тестирование, работу с системами непрерывной интеграции и обеспечение качества программного обеспечения.
+                <p data-ru="Я начинающий специалист, который с энтузиазмом погружается в мир <span class='highlight-ai'>искусственного интеллекта</span>. Моё сердце принадлежит современным технологиям, нейросетям и всему, что связано с машинным обучением." 
+                   data-en="I am a beginner specialist who enthusiastically immerses herself in the world of <span class='highlight-ai'>artificial intelligence</span>. My heart belongs to modern technologies, neural networks and everything related to machine learning.">
+                    Я начинающий специалист, который с энтузиазмом погружается в мир <span class="highlight-ai">искусственного интеллекта</span>. Моё сердце принадлежит современным технологиям, нейросетям и всему, что связано с машинным обучением.
                 </p>
-                <p data-ru="Помимо технических навыков, я обладаю опытом работы с системой <span class='highlight'>1С:Предприятие</span>, кассовыми операциями и клиентским сервисом. Имею водительские права категории B и 14 лет стажа вождения." 
-                   data-en="In addition to technical skills, I have experience with <span class='highlight'>1C:Enterprise</span> system, cash operations and customer service. I have a driver's license category B with 14 years of driving experience.">
-                    Помимо технических навыков, я обладаю опытом работы с системой <span class="highlight">1С:Предприятие</span>, кассовыми операциями и клиентским сервисом. Имею водительские права категории B и 14 лет стажа вождения.
+                <p data-ru="Постоянно изучаю новые ИИ-инструменты, экспериментирую с генеративными моделями и ищу способы применения искусственного интеллекта для решения практических задач. Верю, что ИИ — это будущее, и хочу быть частью этого будущего." 
+                   data-en="I constantly study new AI tools, experiment with generative models and look for ways to apply artificial intelligence to solve practical problems. I believe that AI is the future, and I want to be part of this future.">
+                    Постоянно изучаю новые ИИ-инструменты, экспериментирую с генеративными моделями и ищу способы применения искусственного интеллекта для решения практических задач. Верю, что ИИ — это будущее, и хочу быть частью этого будущего.
                 </p>
-                <p data-ru="Я постоянно развиваюсь в профессиональной сфере, изучаю <span class='highlight'>искусственный интеллект</span> и современные подходы к тестированию. Ценю качество, надежность и внимание к деталям." 
-                   data-en="I continuously develop my professional skills, study <span class='highlight'>artificial intelligence</span> and modern testing approaches. I value quality, reliability and attention to detail.">
-                    Я постоянно развиваюсь в профессиональной сфере, изучаю <span class="highlight">искусственный интеллект</span> и современные подходы к тестированию. Ценю качество, надежность и внимание к деталям.
+                <p data-ru="Помимо увлечения ИИ, я имею богатый опыт работы с системой <span class='highlight-ai'>1С:Предприятие</span>, кассовыми операциями и документооборотом. Владею водительскими правами категории В <span class='highlight-ai'>с 2012 года</span> и имею собственный автомобиль." 
+                   data-en="In addition to my passion for AI, I have extensive experience working with the <span class='highlight-ai'>1C:Enterprise</span> system, cash operations and document management. I have held a driver's license category B <span class='highlight-ai'>since 2012</span> and own a car.">
+                    Помимо увлечения ИИ, я имею богатый опыт работы с системой <span class="highlight-ai">1С:Предприятие</span>, кассовыми операциями и документооборотом. Владею водительскими правами категории В <span class="highlight-ai">с 2012 года</span> и имею собственный автомобиль.
+                </p>
+                <p data-ru="Живу в городе Ачинск (Красноярский край), замужем, мама двоих замечательных детей. Стремлюсь к постоянному профессиональному росту и готова применять свои знания в области ИИ на практике." 
+                   data-en="I live in the city of Achinsk (Krasnoyarsk Territory), married, mother of two wonderful children. I strive for constant professional growth and am ready to apply my AI knowledge in practice.">
+                    Живу в городе Ачинск (Красноярский край), замужем, мама двоих замечательных детей. Стремлюсь к постоянному профессиональному росту и готова применять свои знания в области ИИ на практике.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Simple Skills Section -->
     <section id="skills">
-        <h2 class="section-title" data-ru="НАВЫКИ" data-en="SKILLS">НАВЫКИ</h2>
+        <h2 class="section-title" data-ru="МОИ НАВЫКИ" data-en="MY SKILLS">МОИ НАВЫКИ</h2>
         <div class="skills-container">
-            <div class="skill-category">
-                <h3 data-ru="ТЕХНИЧЕСКИЕ НАВЫКИ" data-en="TECHNICAL SKILLS">ТЕХНИЧЕСКИЕ НАВЫКИ</h3>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="JAVA DEVELOPMENT" data-en="JAVA DEVELOPMENT">JAVA DEVELOPMENT</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="TEST AUTOMATION" data-en="TEST AUTOMATION">TEST AUTOMATION</span>
-                        <span class="skill-level">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="SELENIDE / SELENIUM" data-en="SELENIDE / SELENIUM">SELENIDE / SELENIUM</span>
-                        <span class="skill-level">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="JUNIT 5" data-en="JUNIT 5">JUNIT 5</span>
-                        <span class="skill-level">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="MAVEN / GRADLE" data-en="MAVEN / GRADLE">MAVEN / GRADLE</span>
-                        <span class="skill-level">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="GIT / GITHUB" data-en="GIT / GITHUB">GIT / GITHUB</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="GITHUB ACTIONS" data-en="GITHUB ACTIONS">GITHUB ACTIONS</span>
-                        <span class="skill-level">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="INTELLIJ IDEA" data-en="INTELLIJ IDEA">INTELLIJ IDEA</span>
-                        <span class="skill-level">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="95%"></div>
-                    </div>
-                </div>
+            <div class="skill-tag skill-ai" data-ru="ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ" data-en="ARTIFICIAL INTELLIGENCE">
+                ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ
             </div>
-
-            <div class="skill-category">
-                <h3 data-ru="БИЗНЕС-НАВЫКИ" data-en="BUSINESS SKILLS">БИЗНЕС-НАВЫКИ</h3>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="1С:ПРЕДПРИЯТИЕ" data-en="1C:ENTERPRISE">1С:ПРЕДПРИЯТИЕ</span>
-                        <span class="skill-level">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="MANUAL TESTING" data-en="MANUAL TESTING">MANUAL TESTING</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="DOCUMENTATION" data-en="DOCUMENTATION">DOCUMENTATION</span>
-                        <span class="skill-level">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="CASH OPERATIONS" data-en="CASH OPERATIONS">CASH OPERATIONS</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="RETAIL / WHOLESALE" data-en="RETAIL / WHOLESALE">RETAIL / WHOLESALE</span>
-                        <span class="skill-level">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="CUSTOMER SERVICE" data-en="CUSTOMER SERVICE">CUSTOMER SERVICE</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="DRIVING LICENSE B" data-en="DRIVING LICENSE B">DRIVING LICENSE B</span>
-                        <span class="skill-level">100%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="100%"></div>
-                    </div>
-                </div>
+            <div class="skill-tag skill-ai" data-ru="НЕЙРОСЕТИ" data-en="NEURAL NETWORKS">
+                НЕЙРОСЕТИ
             </div>
-
-            <div class="skill-category">
-                <h3 data-ru="ДОПОЛНИТЕЛЬНЫЕ НАВЫКИ" data-en="ADDITIONAL SKILLS">ДОПОЛНИТЕЛЬНЫЕ НАВЫКИ</h3>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="ARTIFICIAL INTELLIGENCE" data-en="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</span>
-                        <span class="skill-level">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="ENGLISH LANGUAGE" data-en="ENGLISH LANGUAGE">ENGLISH LANGUAGE</span>
-                        <span class="skill-level">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="TEAMWORK" data-en="TEAMWORK">TEAMWORK</span>
-                        <span class="skill-level">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="MULTITASKING" data-en="MULTITASKING">MULTITASKING</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="OFFICE SOFTWARE" data-en="OFFICE SOFTWARE">OFFICE SOFTWARE</span>
-                        <span class="skill-level">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name" data-ru="ANALYTICAL THINKING" data-en="ANALYTICAL THINKING">ANALYTICAL THINKING</span>
-                        <span class="skill-level">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="90%"></div>
-                    </div>
-                </div>
+            <div class="skill-tag skill-ai" data-ru="МАШИННОЕ ОБУЧЕНИЕ" data-en="MACHINE LEARNING">
+                МАШИННОЕ ОБУЧЕНИЕ
+            </div>
+            <div class="skill-tag skill-1c" data-ru="1С:ПРЕДПРИЯТИЕ" data-en="1C:ENTERPRISE">
+                1С:ПРЕДПРИЯТИЕ
+            </div>
+            <div class="skill-tag skill-office" data-ru="РАБОТА С ДОКУМЕНТАМИ" data-en="DOCUMENT MANAGEMENT">
+                РАБОТА С ДОКУМЕНТАМИ
+            </div>
+            <div class="skill-tag skill-office" data-ru="КАССОВЫЕ ОПЕРАЦИИ" data-en="CASH OPERATIONS">
+                КАССОВЫЕ ОПЕРАЦИИ
+            </div>
+            <div class="skill-tag skill-office" data-ru="УВЕРЕННЫЙ ПОЛЬЗОВАТЕЛЬ ПК" data-en="CONFIDENT PC USER">
+                УВЕРЕННЫЙ ПОЛЬЗОВАТЕЛЬ ПК
+            </div>
+            <div class="skill-tag skill-office" data-ru="ВОДИТЕЛЬСКИЕ ПРАВА КАТ. В" data-en="DRIVER'S LICENSE CAT. B">
+                ВОДИТЕЛЬСКИЕ ПРАВА КАТ. В
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - From Resume -->
     <section id="experience">
         <h2 class="section-title" data-ru="ОПЫТ РАБОТЫ" data-en="WORK EXPERIENCE">ОПЫТ РАБОТЫ</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date" data-ru="2024 - НАСТОЯЩЕЕ ВРЕМЯ" data-en="2024 - PRESENT">2024 - НАСТОЯЩЕЕ ВРЕМЯ</span>
-                    <h3 data-ru="ИНЖЕНЕР ПО ТЕСТИРОВАНИЮ" data-en="QA ENGINEER">ИНЖЕНЕР ПО ТЕСТИРОВАНИЮ</h3>
-                    <span class="company" data-ru="IT-КОМПАНИЯ" data-en="IT COMPANY">IT-КОМПАНИЯ</span>
-                    <p data-ru="Разработка и выполнение тестовой документации, автоматизация тестирования с использованием <span class='highlight'>Selenide и JUnit 5</span>, работа с <span class='highlight'>CI/CD</span> системами, интеграция тестов в процесс разработки." 
-                       data-en="Development and execution of test documentation, test automation using <span class='highlight'>Selenide and JUnit 5</span>, working with <span class='highlight'>CI/CD</span> systems, integration of tests into the development process.">
-                        Разработка и выполнение тестовой документации, автоматизация тестирования с использованием <span class="highlight">Selenide и JUnit 5</span>, работа с <span class="highlight">CI/CD</span> системами, интеграция тестов в процесс разработки.
-                    </p>
-                    <p data-ru="Настройка и запуск систем под тестирование в среде непрерывной интеграции, обеспечение качества программного обеспечения на всех этапах разработки." 
-                       data-en="Setting up and launching systems under test in CI environments, ensuring software quality at all stages of development.">
-                        Настройка и запуск систем под тестирование в среде непрерывной интеграции, обеспечение качества программного обеспечения на всех этапах разработки.
+                    <span class="timeline-date" data-ru="ЯНВ 2025 - ИЮЛЬ 2025" data-en="JAN 2025 - JUL 2025">ЯНВ 2025 - ИЮЛЬ 2025</span>
+                    <h3 data-ru="ОПЕРАТОР ЕГАИС" data-en="EGAIS OPERATOR">ОПЕРАТОР ЕГАИС</h3>
+                    <span class="company" data-ru="КОМПАНИЯ «КОНТРОЛЬ»" data-en="COMPANY «KONTROL»">КОМПАНИЯ «КОНТРОЛЬ»</span>
+                    <p data-ru="Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности." 
+                       data-en="Working with the EGAIS system, accounting for alcohol products, generating reports.">
+                        Работа с системой ЕГАИС, ведение учета алкогольной продукции, формирование отчетности.
                     </p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date" data-ru="2020 - 2024" data-en="2020 - 2024">2020 - 2024</span>
-                    <h3 data-ru="ОПЕРАТОР / КАССИР 1С" data-en="OPERATOR / CASHIER 1C">ОПЕРАТОР / КАССИР 1С</h3>
-                    <span class="company" data-ru="ТОРГОВАЯ КОМПАНИЯ" data-en="TRADING COMPANY">ТОРГОВАЯ КОМПАНИЯ</span>
-                    <p data-ru="Работа с кассовыми аппаратами, обработка товарных операций, ведение документации в системе <span class='highlight'>1С:Предприятие</span>, работа с клиентами, управление денежными потоками." 
-                       data-en="Working with cash registers, processing commodity operations, maintaining documentation in <span class='highlight'>1C:Enterprise</span> system, working with clients, managing cash flows.">
-                        Работа с кассовыми аппаратами, обработка товарных операций, ведение документации в системе <span class="highlight">1С:Предприятие</span>, работа с клиентами, управление денежными потоками.
-                    </p>
-                    <p data-ru="Обработка первичной документации, формирование отчетов, взаимодействие с поставщиками и клиентами." 
-                       data-en="Processing primary documentation, generating reports, interacting with suppliers and clients.">
-                        Обработка первичной документации, формирование отчетов, взаимодействие с поставщиками и клиентами.
+                    <span class="timeline-date" data-ru="ОКТ 2023 - ОКТ 2024" data-en="OCT 2023 - OCT 2024">ОКТ 2023 - ОКТ 2024</span>
+                    <h3 data-ru="ОПЕРАТОР-КАССИР" data-en="CASHIER OPERATOR">ОПЕРАТОР-КАССИР</h3>
+                    <span class="company" data-ru="ООО «ВИКО-КРАСНОЯРСК»" data-en="LLC «VIKO-KRASNOYARSK»">ООО «ВИКО-КРАСНОЯРСК»</span>
+                    <p data-ru="Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами." 
+                       data-en="Cashier work, customer service, receiving and issuing goods, handling cash.">
+                        Работа на кассе, обслуживание клиентов, прием и выдача товара, работа с денежными средствами.
                     </p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date" data-ru="2018 - 2020" data-en="2018 - 2020">2018 - 2020</span>
-                    <h3 data-ru="СПЕЦИАЛИСТ ПО РАБОТЕ С КЛИЕНТАМИ" data-en="CUSTOMER SERVICE SPECIALIST">СПЕЦИАЛИСТ ПО РАБОТЕ С КЛИЕНТАМИ</h3>
-                    <span class="company" data-ru="СЕРВИСНАЯ КОМПАНИЯ" data-en="SERVICE COMPANY">СЕРВИСНАЯ КОМПАНИЯ</span>
-                    <p data-ru="Консультирование клиентов, решение технических вопросов, обработка заказов, ведение отчетности, работа с базами данных." 
-                       data-en="Client consulting, solving technical issues, order processing, reporting, working with databases.">
-                        Консультирование клиентов, решение технических вопросов, обработка заказов, ведение отчетности, работа с базами данных.
-                    </p>
-                    <p data-ru="Обеспечение высокого уровня обслуживания, решение конфликтных ситуаций, координация с другими отделами компании." 
-                       data-en="Ensuring high service level, resolving conflict situations, coordinating with other company departments.">
-                        Обеспечение высокого уровня обслуживания, решение конфликтных ситуаций, координация с другими отделами компании.
+                    <span class="timeline-date" data-ru="МАР 2014 - АПР 2023" data-en="MAR 2014 - APR 2023">МАР 2014 - АПР 2023</span>
+                    <h3 data-ru="ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С" data-en="1C OPERATOR → 1C CASHIER OPERATOR">ОПЕРАТОР 1С → ОПЕРАТОР-КАССИР 1С</h3>
+                    <span class="company" data-ru="ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»" data-en="LLC «TD BIRTREYD» → LLC «BIRTREYD» → LLC «BELY OSTROV»">
+                        ООО «ТД БИРТРЕЙД» → ООО «БИРТРЕЙД» → ООО «БЕЛЫЙ ОСТРОВ»
+                    </span>
+                    <p data-ru="Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами." 
+                       data-en="Working with 1C:Enterprise system, maintaining primary documentation, processing orders, cash operations, interacting with suppliers and clients.">
+                        Работа с системой 1С:Предприятие, ведение первичной документации, обработка заказов, кассовые операции, взаимодействие с поставщиками и клиентами.
                     </p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="timeline-date" data-ru="2015 - 2018" data-en="2015 - 2018">2015 - 2018</span>
-                    <h3 data-ru="ОПЕРАТОР ПК" data-en="PC OPERATOR">ОПЕРАТОР ПК</h3>
-                    <span class="company" data-ru="ПРОИЗВОДСТВЕННАЯ КОМПАНИЯ" data-en="MANUFACTURING COMPANY">ПРОИЗВОДСТВЕННАЯ КОМПАНИЯ</span>
-                    <p data-ru="Работа с офисным оборудованием, обработка данных, ведение электронной документации, подготовка отчетов и презентаций." 
-                       data-en="Working with office equipment, data processing, maintaining electronic documentation, preparing reports and presentations.">
-                        Работа с офисным оборудованием, обработка данных, ведение электронной документации, подготовка отчетов и презентаций.
+                    <span class="timeline-date" data-ru="МАЙ 2012 - ФЕВ 2014" data-en="MAY 2012 - FEB 2014">МАЙ 2012 - ФЕВ 2014</span>
+                    <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
+                    <span class="company" data-ru="ООО «РИТМ»" data-en="LLC «RITM»">ООО «РИТМ»</span>
+                    <p data-ru="Работа с офисным оборудованием, обработка данных, ведение электронной документации." 
+                       data-en="Working with office equipment, data processing, maintaining electronic documentation.">
+                        Работа с офисным оборудованием, обработка данных, ведение электронной документации.
                     </p>
-                    <p data-ru="Взаимодействие с различными программными системами, обеспечение бесперебойной работы офисных процессов." 
-                       data-en="Interaction with various software systems, ensuring uninterrupted office processes.">
-                        Взаимодействие с различными программными системами, обеспечение бесперебойной работы офисных процессов.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date" data-ru="АПР 2011 - АПР 2012" data-en="APR 2011 - APR 2012">АПР 2011 - АПР 2012</span>
+                    <h3 data-ru="ОПЕРАТОР ЭВМ" data-en="PC OPERATOR">ОПЕРАТОР ЭВМ</h3>
+                    <span class="company" data-ru="ООО «МИР ПРОДОВОЛЬСТВИЯ»" data-en="LLC «MIR PRODOVOLSTVIYA»">ООО «МИР ПРОДОВОЛЬСТВИЯ»</span>
+                    <p data-ru="Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально)." 
+                       data-en="Working with documentation, data processing, supporting office processes (worked unofficially from July 2010).">
+                        Работа с документацией, обработка данных, поддержка офисных процессов (работала с июля 2010 года неофициально).
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title" data-ru="ПРОЕКТЫ" data-en="PROJECTS">ПРОЕКТЫ</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <div class="project-info">
-                    <h3 data-ru="АВТОМАТИЗАЦИЯ ТЕСТИРОВАНИЯ" data-en="TEST AUTOMATION">АВТОМАТИЗАЦИЯ ТЕСТИРОВАНИЯ</h3>
-                    <p data-ru="Разработка комплексной системы автоматизированного тестирования с использованием <span class='highlight'>Selenide, JUnit 5 и Gradle</span>. Интеграция с системой непрерывной интеграции <span class='highlight'>GitHub Actions</span>." 
-                       data-en="Development of a comprehensive automated testing system using <span class='highlight'>Selenide, JUnit 5 and Gradle</span>. Integration with CI/CD system <span class='highlight'>GitHub Actions</span>.">
-                        Разработка комплексной системы автоматизированного тестирования с использованием <span class="highlight">Selenide, JUnit 5 и Gradle</span>. Интеграция с системой непрерывной интеграции <span class="highlight">GitHub Actions</span>.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Selenide</span>
-                        <span class="tag">JUnit 5</span>
-                        <span class="tag">Gradle</span>
-                        <span class="tag">GitHub Actions</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Kyklina-Irina/netologi.web" class="link-github" target="_blank">
-                            <i class="fab fa-github"></i> GITHUB
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <div class="project-info">
-                    <h3 data-ru="СИСТЕМА УПРАВЛЕНИЯ ЗАДАЧАМИ" data-en="TASK MANAGEMENT SYSTEM">СИСТЕМА УПРАВЛЕНИЯ ЗАДАЧАМИ</h3>
-                    <p data-ru="Разработка веб-приложения для управления задачами и проектами. Реализация функционала для отслеживания прогресса, распределения задач и генерации отчетов." 
-                       data-en="Development of a web application for task and project management. Implementation of functionality for tracking progress, task distribution and report generation.">
-                        Разработка веб-приложения для управления задачами и проектами. Реализация функционала для отслеживания прогресса, распределения задач и генерации отчетов.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">Maven</span>
-                        <span class="tag">REST API</span>
-                        <span class="tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Kyklina-Irina" class="link-github" target="_blank">
-                            <i class="fab fa-github"></i> GITHUB
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="project-info">
-                    <h3 data-ru="ИССЛЕДОВАНИЕ ИИ В ТЕСТИРОВАНИИ" data-en="AI RESEARCH IN TESTING">ИССЛЕДОВАНИЕ ИИ В ТЕСТИРОВАНИИ</h3>
-                    <p data-ru="Изучение и применение методов искусственного интеллекта для автоматизации процессов тестирования. Анализ современных подходов и инструментов в области <span class='highlight'>AI Testing</span>." 
-                       data-en="Study and application of artificial intelligence methods for automating testing processes. Analysis of modern approaches and tools in the field of <span class='highlight'>AI Testing</span>.">
-                        Изучение и применение методов искусственного интеллекта для автоматизации процессов тестирования. Анализ современных подходов и инструментов в области <span class="highlight">AI Testing</span>.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">AI Testing</span>
-                        <span class="tag">Research</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Data Analysis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Kyklina-Irina" class="link-github" target="_blank">
-                            <i class="fab fa-github"></i> GITHUB
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
+    <!-- Education Section - From Resume -->
     <section id="education">
         <h2 class="section-title" data-ru="ОБРАЗОВАНИЕ" data-en="EDUCATION">ОБРАЗОВАНИЕ</h2>
         <div class="education-container">
             <div class="education-item">
-                <h3 data-ru="ТЕСТИРОВАНИЕ ПО" data-en="SOFTWARE TESTING">ТЕСТИРОВАНИЕ ПО</h3>
-                <span class="institution" data-ru="НЕТОЛОГИЯ, 2025" data-en="NETOLOGY, 2025">НЕТОЛОГИЯ, 2025</span>
-                <span class="period" data-ru="КУРС ПО ТЕСТИРОВАНИЮ" data-en="TESTING ENGINEERING COURSE">КУРС ПО ТЕСТИРОВАНИЮ</span>
-                <p data-ru="Освоение методологий ручного и автоматизированного тестирования, инструментов тестирования, работы с тестовой документацией и системами контроля версий." 
-                   data-en="Mastering manual and automated testing methodologies, testing tools, test documentation and version control systems.">
-                    Освоение методологий ручного и автоматизированного тестирования, инструментов тестирования, работы с тестовой документацией и системами контроля версий.
+                <h3 data-ru="АВТОМАТИЗАЦИЯ СМЕТНОГО ДЕЛА" data-en="ESTIMATE AUTOMATION">АВТОМАТИЗАЦИЯ СМЕТНОГО ДЕЛА</h3>
+                <span class="institution" data-ru="ЦЕНТР ПРОФЕССИОНАЛЬНОГО РАЗВИТИЯ «ПАРТНЁР»" data-en="PROFESSIONAL DEVELOPMENT CENTER «PARTNER»">
+                    ЦЕНТР ПРОФЕССИОНАЛЬНОГО РАЗВИТИЯ «ПАРТНЁР»
+                </span>
+                <span class="period" data-ru="29.04.2020" data-en="29.04.2020">29.04.2020</span>
+                <p data-ru="Получение навыков автоматизации сметных расчетов и работы со специализированным программным обеспечением." 
+                   data-en="Acquiring skills in automating estimate calculations and working with specialized software.">
+                    Получение навыков автоматизации сметных расчетов и работы со специализированным программным обеспечением.
                 </p>
             </div>
 
             <div class="education-item">
-                <h3 data-ru="ИНФОРМАЦИОННЫЕ СИСТЕМЫ" data-en="INFORMATION SYSTEMS">ИНФОРМАЦИОННЫЕ СИСТЕМЫ</h3>
-                <span class="institution" data-ru="ВЫСШЕЕ ОБРАЗОВАНИЕ" data-en="HIGHER EDUCATION">ВЫСШЕЕ ОБРАЗОВАНИЕ</span>
-                <span class="period" data-ru="ИНЖЕНЕРИЯ И ЭКОНОМИКА" data-en="ENGINEERING AND ECONOMICS">ИНЖЕНЕРИЯ И ЭКОНОМИКА</span>
-                <p data-ru="Получение фундаментальных знаний в области информационных технологий, системного анализа, программирования и экономики." 
-                   data-en="Acquiring fundamental knowledge in information technology, systems analysis, programming and economics.">
-                    Получение фундаментальных знаний в области информационных технологий, системного анализа, программирования и экономики.
+                <h3 data-ru="АВТОМАТИЗИРОВАННЫЕ СИСТЕМЫ ОБРАБОТКИ ИНФОРМАЦИИ И УПРАВЛЕНИЯ" data-en="AUTOMATED INFORMATION PROCESSING AND CONTROL SYSTEMS">
+                    АВТОМАТИЗИРОВАННЫЕ СИСТЕМЫ ОБРАБОТКИ ИНФОРМАЦИИ И УПРАВЛЕНИЯ
+                </h3>
+                <span class="institution" data-ru="СИБГАУ ИМ. АКАДЕМИКА М. Ф. РЕШЕТНЕВА" data-en="SIBSAU NAMED AFTER ACADEMICIAN M. F. RESHETNEV">
+                    СИБГАУ ИМ. АКАДЕМИКА М. Ф. РЕШЕТНЕВА
+                </span>
+                <span class="period" data-ru="2005 - 2007 (НЕ ОКОНЧЕНО)" data-en="2005 - 2007 (INCOMPLETE)">2005 - 2007 (НЕ ОКОНЧЕНО)</span>
+                <p data-ru="Изучение основ автоматизированных систем, программирования и управления информационными потоками." 
+                   data-en="Studying the basics of automated systems, programming and information flow management.">
+                    Изучение основ автоматизированных систем, программирования и управления информационными потоками.
                 </p>
             </div>
 
             <div class="education-item">
-                <h3 data-ru="ПОСТОЯННОЕ ОБУЧЕНИЕ" data-en="CONTINUOUS LEARNING">ПОСТОЯННОЕ ОБУЧЕНИЕ</h3>
-                <span class="institution" data-ru="САМОРАЗВИТИЕ" data-en="SELF-DEVELOPMENT">САМОРАЗВИТИЕ</span>
-                <span class="period" data-ru="2024 - НАСТОЯЩЕЕ ВРЕМЯ" data-en="2024 - PRESENT">2024 - НАСТОЯЩЕЕ ВРЕМЯ</span>
-                <p data-ru="Изучение современных технологий в области искусственного интеллекта, машинного обучения, облачных вычислений и передовых методов разработки программного обеспечения." 
-                   data-en="Studying modern technologies in artificial intelligence, machine learning, cloud computing and advanced software development methods.">
-                    Изучение современных технологий в области искусственного интеллекта, машинного обучения, облачных вычислений и передовых методов разработки программного обеспечения.
+                <h3 data-ru="БУХГАЛТЕР-ОПЕРАТОР 1С" data-en="ACCOUNTANT-OPERATOR 1C">БУХГАЛТЕР-ОПЕРАТОР 1С</h3>
+                <span class="institution" data-ru="АГКОТИБ" data-en="AGKOTIB">АГКОТИБ</span>
+                <span class="period" data-ru="21.02.2005" data-en="21.02.2005">21.02.2005</span>
+                <p data-ru="Освоение работы с бухгалтерскими программами и системой 1С:Предприятие." 
+                   data-en="Mastering accounting software and the 1C:Enterprise system.">
+                    Освоение работы с бухгалтерскими программами и системой 1С:Предприятие.
+                </p>
+            </div>
+
+            <div class="education-item">
+                <h3 data-ru="ЭКОНОМИКА И БУХГАЛТЕРСКИЙ УЧЁТ (В СТРОИТЕЛЬСТВЕ)" data-en="ECONOMICS AND ACCOUNTING (IN CONSTRUCTION)">
+                    ЭКОНОМИКА И БУХГАЛТЕРСКИЙ УЧЁТ (В СТРОИТЕЛЬСТВЕ)
+                </h3>
+                <span class="institution" data-ru="АГКОТИБ, КВАЛИФИКАЦИЯ БУХГАЛТЕР" data-en="AGKOTIB, QUALIFICATION ACCOUNTANT">АГКОТИБ, КВАЛИФИКАЦИЯ БУХГАЛТЕР</span>
+                <span class="period" data-ru="27.06.2005" data-en="27.06.2005">27.06.2005</span>
+                <p data-ru="Получение фундаментальных знаний в области экономики, бухгалтерского учета и финансового анализа в строительной сфере." 
+                   data-en="Acquiring fundamental knowledge in economics, accounting and financial analysis in the construction sector.">
+                    Получение фундаментальных знаний в области экономики, бухгалтерского учета и финансового анализа в строительной сфере.
                 </p>
             </div>
         </div>
@@ -1707,21 +1325,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-telegram"></i>
                     </div>
                     <div class="contact-details">
-                        <h3 data-ru="GITHUB" data-en="GITHUB">GITHUB</h3>
-                        <a href="https://github.com/Kyklina-Irina" target="_blank">github.com/Kyklina-Irina</a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3 data-ru="EMAIL" data-en="EMAIL">EMAIL</h3>
-                        <a href="mailto:89080251938@yandex.com">89080251938@yandex.com</a>
+                        <h3 data-ru="TELEGRAM" data-en="TELEGRAM">TELEGRAM</h3>
+                        <a href="https://t.me/Irina1704" target="_blank">@Irina1704</a>
                     </div>
                 </div>
 
@@ -1737,11 +1345,35 @@
 
                 <div class="contact-item">
                     <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="GITHUB" data-en="GITHUB">GITHUB</h3>
+                        <a href="https://github.com/Kyklina-Irina" target="_blank">github.com/Kyklina-Irina</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-details">
                         <h3 data-ru="МЕСТОПОЛОЖЕНИЕ" data-en="LOCATION">МЕСТОПОЛОЖЕНИЕ</h3>
-                        <p data-ru="АЧИНСК, РОССИЯ" data-en="ACHINSK, RUSSIA">АЧИНСК, РОССИЯ</p>
+                        <p data-ru="АЧИНСК, КРАСНОЯРСКИЙ КРАЙ, РОССИЯ" data-en="ACHINSK, KRASNOYARSK TERRITORY, RUSSIA">
+                            АЧИНСК, КРАСНОЯРСКИЙ КРАЙ, РОССИЯ
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="ПЛАТФОРМА MAX" data-en="MAX PLATFORM">ПЛАТФОРМА MAX</h3>
+                        <p data-ru="ЗАРЕГИСТРИРОВАНА В СИСТЕМЕ MAX" data-en="REGISTERED IN MAX SYSTEM">
+                            ЗАРЕГИСТРИРОВАНА В СИСТЕМЕ MAX
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1781,22 +1413,19 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://github.com/Kyklina-Irina" class="social-link" target="_blank" 
-                   title="GitHub" aria-label="GitHub">
+                <a href="https://t.me/Irina1704" class="social-link telegram" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://github.com/Kyklina-Irina" class="social-link github" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:89080251938@yandex.com" class="social-link" 
-                   title="Email" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+79080251938" class="social-link" 
-                   title="Phone" aria-label="Phone">
-                    <i class="fas fa-phone"></i>
+                <a href="https://max.ru" class="social-link max" target="_blank" title="MAX Platform">
+                    <i class="fas fa-user-astronaut"></i>
                 </a>
             </div>
-            <p class="copyright" data-ru="© 2026 КУКЛИНА ИРИНА. ВСЕ ПРАВА ЗАЩИЩЕНЫ." 
-               data-en="© 2026 KUKLINA IRINA. ALL RIGHTS RESERVED.">
-                © 2026 КУКЛИНА ИРИНА. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
+            <p class="copyright" data-ru="© 2026 КУКЛИНА ИРИНА • НАЧИНАЮЩИЙ СПЕЦИАЛИСТ В ОБЛАСТИ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА" 
+               data-en="© 2026 KUKLINA IRINA • BEGINNER AI SPECIALIST">
+                © 2026 КУКЛИНА ИРИНА • НАЧИНАЮЩИЙ СПЕЦИАЛИСТ В ОБЛАСТИ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА
             </p>
         </div>
     </footer>
@@ -1834,16 +1463,6 @@
             document.querySelector('.language-switch button[data-lang="en"]').click();
         }
 
-        // Animate skill bars on scroll
-        const skillProgressBars = document.querySelectorAll('.skill-progress');
-        
-        const animateSkills = () => {
-            skillProgressBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width;
-            });
-        };
-
         // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -1853,9 +1472,6 @@
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if (entry.target.id === 'skills') {
-                        animateSkills();
-                    }
                     sectionObserver.unobserve(entry.target);
                 }
             });
@@ -1897,11 +1513,11 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 30px rgba(102, 126, 234, 0.4)';
-                header.style.background = 'rgba(15, 12, 41, 0.98)';
+                header.style.boxShadow = '0 5px 35px rgba(138, 43, 226, 0.5)';
+                header.style.background = 'rgba(13, 10, 37, 0.99)';
             } else {
                 header.style.boxShadow = 'none';
-                header.style.background = 'rgba(15, 12, 41, 0.95)';
+                header.style.background = 'rgba(13, 10, 37, 0.97)';
             }
         });
     </script>
