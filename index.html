@@ -37,30 +37,6 @@
             position: relative;
         }
 
-        /* Floating Particles - Optimized for mobile */
-        .particle {
-            position: fixed;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: floatParticle linear infinite;
-            z-index: -1;
-            opacity: 0.7;
-        }
-
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.7; }
-            100% {
-                transform: translateY(-100vh) translateX(var(--offset)) rotate(var(--rotate));
-                opacity: 0;
-            }
-        }
-
         /* Header - Mobile Optimized */
         header {
             position: fixed;
@@ -185,7 +161,7 @@
             position: relative;
             text-align: center;
             overflow: hidden;
-            padding-top: 70px; /* Убираем перекрытие header */
+            padding-top: 70px; /* Компенсирует высоту header */
         }
 
         .hero-content {
@@ -325,7 +301,7 @@
             border-radius: 2px;
         }
 
-        /* Content Cards - Mobile First */
+        /* Content Cards */
         .content-card {
             background: var(--card-bg);
             padding: 1.6rem;
@@ -662,14 +638,10 @@
             }
         }
 
-        /* Responsive Design - Mobile First */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
-                padding-top: 65px; /* Высота header + немного отступа */
-            }
-
-            .hero-content {
-                padding-top: 0;
+                padding-top: 65px;
             }
 
             .hero h1 {
@@ -834,40 +806,6 @@
     </style>
 </head>
 <body>
-    <!-- Floating Particles -->
-    <script>
-        function createParticles() {
-            const particleCount = 350;
-            const container = document.body;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const size = Math.random() * 20 + 4;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                const duration = Math.random() * 12 + 6;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${Math.random() * 8}s`;
-                
-                const offset = (Math.random() - 0.5) * 250;
-                particle.style.setProperty('--offset', `${offset}px`);
-                
-                const rotate = Math.random() * 360;
-                particle.style.setProperty('--rotate', `${rotate}deg`);
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        window.addEventListener('load', createParticles);
-    </script>
-
     <!-- Header -->
     <header>
         <a href="#" class="logo">Irina</a>
@@ -1250,6 +1188,14 @@
             });
         });
 
+        // Close menu on link click
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
         // Form submission
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
@@ -1259,32 +1205,6 @@
                 contactForm.reset();
             });
         }
-
-        // Close menu on link click
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Intersection Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        };
-
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    sectionObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            sectionObserver.observe(section);
-        });
     </script>
 </body>
 </html>
