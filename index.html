@@ -1,921 +1,1135 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Куклина Ирина | QA Automation Engineer</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-primary: #0a081a;
-  --bg-secondary: #120f28;
-  --bg-tertiary: #1a1535;
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-accent: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-  --text-light: #ffffff;
-  --card-bg: rgba(25, 20, 55, 0.92);
-  --card-border: rgba(102, 126, 234, 0.5);
-  --shadow-neon: 0 0 25px rgba(102, 126, 234, 0.6);
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.8;
-  overflow-x: hidden;
-  background: var(--bg-primary);
-  color: var(--text-light);
-  position: relative;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.8rem 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(10, 8, 26, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--card-border);
-  z-index: 1000;
-  transition: var(--transition);
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
-}
-
-nav ul {
-  display: none;
-  list-style: none;
-  gap: 1rem;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(10, 8, 26, 0.95);
-  padding: 1rem 0;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
-}
-
-nav ul.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  transition: var(--transition);
-}
-
-nav a:hover {
-  color: transparent;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.menu-toggle {
-  display: block;
-  font-size: 1.4rem;
-  color: var(--text-light);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.language-switch {
-  display: flex;
-  gap: 0.6rem;
-  background: rgba(102, 126, 234, 0.25);
-  padding: 0.2rem 0.4rem;
-  border-radius: 15px;
-  border: 1px solid var(--card-border);
-}
-
-.language-switch button {
-  background: none;
-  border: none;
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
-  transition: var(--transition);
-  color: var(--text-light);
-  font-size: 0.85rem;
-}
-
-.language-switch button.active {
-  background: var(--gradient-primary);
-  color: white;
-  box-shadow: var(--shadow-neon);
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 2%;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  padding-top: 70px;
-}
-
-.hero-content {
-  max-width: 100%;
-  width: 100%;
-  animation: fadeInUp 1s ease-out;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  margin-bottom: 0.8rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 600;
-}
-
-.hero p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-light);
-  opacity: 0.95;
-  max-width: 100%;
-  line-height: 1.7;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-
-.qa-badge {
-  display: inline-block;
-  background: var(--gradient-accent);
-  color: white;
-  padding: 0.3rem 1.2rem;
-  border-radius: 20px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  box-shadow: 0 0 15px rgba(67, 233, 123, 0.6);
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 0.8rem;
-  justify-content: center;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.8rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: 1.5px solid rgba(102, 126, 234, 0.6);
-  transition: var(--transition);
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.btn-primary {
-  background: var(--gradient-primary);
-  border: none;
-}
-
-.btn-secondary {
-  background: transparent;
-}
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
-}
-
-section {
-  padding: 4rem 2%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.3rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-.about-text h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-.about-text p {
-  line-height: 1.8;
-  color: var(--text-light);
-  opacity: 0.95;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.highlight {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.skill-category {
-  background: var(--card-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 18px;
-  padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  transition: var(--transition);
-}
-
-.skill-category:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-neon);
-  border-color: rgba(102, 126, 234, 0.8);
-}
-
-.skill-category h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.skill-tag {
-  background: rgba(102, 126, 234, 0.2);
-  border: 1px solid var(--card-border);
-  color: var(--text-light);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.skill-tag:hover {
-  background: rgba(102, 126, 234, 0.4);
-  transform: translateY(-2px);
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 18px;
-  padding: 1.8rem;
-  backdrop-filter: blur(8px);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-primary);
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
-  border-color: rgba(102, 126, 234, 0.8);
-}
-
-.project-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  color: var(--text-light);
-  font-weight: 700;
-}
-
-.project-card .project-desc {
-  color: var(--text-light);
-  opacity: 0.9;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.2rem;
-}
-
-.tech-tag {
-  background: rgba(67, 233, 123, 0.2);
-  border: 1px solid rgba(67, 233, 123, 0.5);
-  color: #43e97b;
-  padding: 0.25rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #4facfe;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: var(--transition);
-}
-
-.project-link:hover {
-  color: #00f2fe;
-  gap: 0.8rem;
-}
-
-.experience-container,
-.education-container {
-  display: grid;
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.content-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 18px;
-  padding: 1.8rem;
-  backdrop-filter: blur(8px);
-  transition: var(--transition);
-  position: relative;
-}
-
-.content-card:hover {
-  transform: translateX(6px);
-  border-color: rgba(102, 126, 234, 0.8);
-  box-shadow: var(--shadow-neon);
-}
-
-.content-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  margin-bottom: 0.4rem;
-  color: var(--text-light);
-  font-weight: 700;
-}
-
-.company, .institution {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #4facfe;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-.period {
-  display: inline-block;
-  background: rgba(102, 126, 234, 0.25);
-  color: white;
-  padding: 0.25rem 1rem;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  border: 1px solid var(--card-border);
-}
-
-.content-card p {
-  line-height: 1.7;
-  color: var(--text-light);
-  opacity: 0.95;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-}
-
-.content-card ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-
-.content-card ul li {
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 0.4rem;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--text-light);
-  opacity: 0.95;
-}
-
-.content-card ul li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #43e97b;
-  font-weight: bold;
-}
-
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.contact-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.2rem;
-}
-
-.contact-item {
-  background: var(--card-bg);
-  padding: 1.4rem;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  box-shadow: var(--shadow-neon);
-  border: 1.5px solid var(--card-border);
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
-  text-decoration: none;
-}
-
-.contact-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
-  border-color: rgba(102, 126, 234, 0.8);
-}
-
-.contact-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.7);
-}
-
-.contact-details h3 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-.contact-details p, .contact-details a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0.95;
-  transition: var(--transition);
-}
-
-.contact-details a:hover {
-  color: #4facfe;
-}
-
-.contact-form {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 18px;
-  border: 1.5px solid var(--card-border);
-  backdrop-filter: blur(10px);
-}
-
-.form-group {
-  margin-bottom: 1.4rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.6rem;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 1rem;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.8rem 1.2rem;
-  border: 2px solid rgba(102, 126, 234, 0.6);
-  border-radius: 12px;
-  font-size: 1rem;
-  background: rgba(30, 25, 70, 0.8);
-  color: var(--text-light);
-  transition: var(--transition);
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--gradient-primary);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
-}
-
-textarea.form-control {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.submit-btn {
-  background: var(--gradient-primary);
-  color: white;
-  padding: 1rem 2.5rem;
-  border: none;
-  border-radius: 25px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: var(--transition);
-  width: 100%;
-  box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
-}
-
-.submit-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 0 35px rgba(102, 126, 234, 0.9);
-}
-
-footer {
-  background: rgba(10, 8, 26, 0.99);
-  padding: 2.5rem 2%;
-  text-align: center;
-  border-top: 1.5px solid var(--card-border);
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.social-link {
-  width: 60px;
-  height: 60px;
-  background: var(--card-bg);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4facfe;
-  font-size: 1.6rem;
-  text-decoration: none;
-  transition: var(--transition);
-  border: 2px solid var(--card-border);
-  box-shadow: var(--shadow-neon);
-}
-
-.social-link:hover {
-  background: var(--gradient-primary);
-  color: white;
-  transform: translateY(-6px) rotate(360deg);
-  box-shadow: 0 0 30px rgba(102, 126, 234, 0.9);
-  border-color: transparent;
-}
-
-.copyright {
-  opacity: 0.8;
-  font-size: 1rem;
-  background: var(--gradient-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 600;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 1.1rem; }
-  .section-title { font-size: 1.9rem; }
-  .contact-container { grid-template-columns: 1fr; }
-  .hero-buttons { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
-  section { padding: 3rem 2%; }
-  .project-card, .content-card, .skill-category { padding: 1.4rem; }
-  .contact-info { gap: 1rem; }
-  .contact-item { padding: 1.2rem; gap: 1rem; }
-  .contact-icon { width: 45px; height: 45px; font-size: 1.2rem; }
-  .social-links { gap: 1.2rem; }
-  .social-link { width: 55px; height: 55px; font-size: 1.4rem; }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { font-size: 1.9rem; }
-  .section-title { font-size: 1.6rem; }
-  .logo { font-size: 1.5rem; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Куклина Ирина | QA Automation Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --bg-primary: #0a081a;
+            --bg-secondary: #120f28;
+            --bg-tertiary: #1a1535;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-accent: linear-gradient(135deg, #ff4081 0%, #ff80ab 100%);
+            --text-light: #ffffff;
+            --card-bg: rgba(25, 20, 55, 0.92);
+            --card-border: rgba(102, 126, 234, 0.5);
+            --shadow-neon: 0 0 25px rgba(102, 126, 234, 0.6);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--bg-primary);
+            color: var(--text-light);
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.8rem 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 8, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: 1rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 8, 26, 0.95);
+            padding: 1rem 0;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: transparent;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .menu-toggle {
+            display: block;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 0.6rem;
+            background: rgba(102, 126, 234, 0.25);
+            padding: 0.2rem 0.4rem;
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+        }
+
+        .language-switch button {
+            background: none;
+            border: none;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .language-switch button.active {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-neon);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 2%;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 100%;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            opacity: 0.95;
+            max-width: 100%;
+            line-height: 1.7;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .qa-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            letter-spacing: 0.7px;
+            box-shadow: 0 0 15px rgba(255, 64, 129, 0.6);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            letter-spacing: 0.7px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 35px rgba(102, 126, 234, 0.9);
+        }
+
+        /* Sections */
+        section {
+            padding: 3.5rem 2%;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: var(--card-bg);
+            padding: 1.6rem;
+            border-radius: 18px;
+            margin-bottom: 1.6rem;
+            box-shadow: var(--shadow-neon);
+            border: 1.5px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.8s ease-out forwards;
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateX(-20px) translateY(-4px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+            border-color: rgba(102, 126, 234, 0.8);
+        }
+
+        .content-card:nth-child(1) { animation-delay: 0.2s; }
+        .content-card:nth-child(2) { animation-delay: 0.3s; }
+        .content-card:nth-child(3) { animation-delay: 0.4s; }
+        .content-card:nth-child(4) { animation-delay: 0.5s; }
+        .content-card:nth-child(5) { animation-delay: 0.6s; }
+
+        .content-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+        }
+
+        .content-card .company {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            color: #ff4081;
+            margin-bottom: 0.8rem;
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        .content-card .period {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.25);
+            color: #667eea;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 1.5px solid rgba(102, 126, 234, 0.6);
+            letter-spacing: 0.6px;
+        }
+
+        .content-card p {
+            line-height: 1.7;
+            color: var(--text-light);
+            opacity: 0.95;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
+            color: var(--text-light);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            background: rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.8);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .contact-form {
+            opacity: 0;
+            transform: translateX(20px);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .contact-item {
+            background: var(--card-bg);
+            padding: 1.4rem;
+            border-radius: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            box-shadow: var(--shadow-neon);
+            border: 1.5px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+            border-color: rgba(102, 126, 234, 0.8);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.7);
+        }
+
+        .contact-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.4rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            letter-spacing: 0.4px;
+        }
+
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1rem;
+            letter-spacing: 0.6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid rgba(102, 126, 234, 0.6);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: rgba(30, 25, 70, 0.8);
+            color: var(--text-light);
+            transition: var(--transition);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gradient-primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            letter-spacing: 0.7px;
+            box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 35px rgba(102, 126, 234, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 8, 26, 0.99);
+            padding: 2.5rem 2%;
+            text-align: center;
+            border-top: 1.5px solid var(--card-border);
+        }
+
+        .footer-content {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4facfe;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--card-border);
+            box-shadow: var(--shadow-neon);
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-6px) rotate(360deg);
+            box-shadow: 0 0 30px rgba(102, 126, 234, 0.9);
+            border-color: transparent;
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 1rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 0.7px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 65px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .qa-badge {
+                font-size: 1rem;
+                padding: 0.25rem 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.7rem 1.8rem;
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 3rem 2%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.6rem;
+            }
+
+            .content-card {
+                padding: 1.4rem;
+            }
+
+            .content-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .content-card .company {
+                font-size: 1.1rem;
+            }
+
+            .content-card .period {
+                font-size: 0.9rem;
+                padding: 0.25rem 0.8rem;
+            }
+
+            .content-card p {
+                font-size: 0.9rem;
+            }
+
+            .skills-container {
+                gap: 0.8rem;
+            }
+
+            .skill-tag {
+                padding: 0.5rem 1.3rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+            }
+
+            .contact-item {
+                padding: 1.2rem;
+            }
+
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .contact-details h3 {
+                font-size: 1.1rem;
+            }
+
+            .contact-details p,
+            .contact-details a {
+                font-size: 0.9rem;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-control {
+                font-size: 0.95rem;
+                padding: 0.7rem 1rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 0.9rem 2rem;
+            }
+
+            .social-links {
+                gap: 1.2rem;
+            }
+
+            .social-link {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+
+            .copyright {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .content-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-details h3 {
+                font-size: 1rem;
+            }
+
+            .form-control {
+                font-size: 0.9rem;
+            }
+
+            nav ul {
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Irina</a>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#about" data-ru="Обо мне" data-en="About Me">Обо мне</a></li>
+                <li><a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a></li>
+                <li><a href="#experience" data-ru="Опыт" data-en="Experience">Опыт</a></li>
+                <li><a href="#education" data-ru="Образование" data-en="Education">Образование</a></li>
+                <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <div class="language-switch">
+                <button class="active" data-lang="ru">Русский</button>
+                <button data-lang="en">English</button>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <a href="#" class="logo">Irina QA</a>
-  <button class="menu-toggle" id="menuToggle">
-    <i class="fas fa-bars"></i>
-  </button>
-  <nav>
-    <ul id="navMenu">
-      <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
-      <li><a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a></li>
-      <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
-      <li><a href="#experience" data-ru="Опыт" data-en="Experience">Опыт</a></li>
-      <li><a href="#education" data-ru="Образование" data-en="Education">Образование</a></li>
-      <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
-    </ul>
-  </nav>
-  <div class="header-controls">
-    <div class="language-switch">
-      <button class="active" data-lang="ru">RU</button>
-      <button data-lang="en">EN</button>
-    </div>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-ru="Куклина Ирина" data-en="Kuklina Irina">Куклина Ирина</h1>
+            <div class="hero-subtitle" data-ru="QA Automation Engineer" data-en="QA Automation Engineer">
+                QA Automation Engineer
+            </div>
+            <p data-ru="Junior QA Automation с опытом автоматизации тестирования на Java. Специализируюсь на UI-тестах с использованием Selenide, применяю паттерн Page Object и настраиваю CI/CD пайплайны. Имею сильный бэкграунд в работе с учетными системами (1С, ЕГАИС), что помогает мне находить баги в бизнес-процессах."
+               data-en="Junior QA Automation with experience in test automation using Java. Specializing in UI tests with Selenide, applying Page Object pattern and setting up CI/CD pipelines. Strong background in working with accounting systems (1C, EGAIS) helps me find bugs in business processes.">
+                Junior QA Automation с опытом автоматизации тестирования на Java. Специализируюсь на UI-тестах с использованием Selenide, применяю паттерн Page Object и настраиваю CI/CD пайплайны. Имею сильный бэкграунд в работе с учетными системами (1С, ЕГАИС), что помогает мне находить баги в бизнес-процессах.
+            </p>
+            <div class="qa-badge" data-ru="🚀 Готова к новым вызовам в QA" data-en="🚀 Ready for new challenges in QA">
+                🚀 Готова к новым вызовам в QA
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary" data-ru="Связаться со мной" data-en="Contact Me">
+                    <i class="fas fa-paper-plane"></i> Связаться со мной
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1 data-ru="Куклина Ирина" data-en="Kuklina Irina">Куклина Ирина</h1>
-    <div class="hero-subtitle" data-ru="Junior QA Automation Engineer" data-en="Junior QA Automation Engineer">
-      Junior QA Automation Engineer
-    </div>
-    <p data-ru="Java • Selenide • JUnit 5 • Page Object • CI/CD. Пишу надёжные автотесты, применяю паттерны проектирования и настраиваю автоматизацию в CI-пайплайнах."
-       data-en="Java • Selenide • JUnit 5 • Page Object • CI/CD. I write reliable autotests, apply design patterns and set up automation in CI pipelines.">
-      Java • Selenide • JUnit 5 • Page Object • CI/CD. Пишу надёжные автотесты, применяю паттерны проектирования и настраиваю автоматизацию в CI-пайплайнах.
-    </p>
-    <div class="qa-badge" data-ru="🚀 Открыта к предложениям о работе" data-en="🚀 Open to work">
-      🚀 <span data-ru="Открыта к предложениям о работе" data-en="Open to work">Открыта к предложениям о работе</span>
-    </div>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">
-        <i class="fas fa-code"></i> <span data-ru="Мои проекты" data-en="My projects">Мои проекты</span>
-      </a>
-      <a href="#contact" class="btn btn-secondary">
-        <i class="fas fa-paper-plane"></i> <span data-ru="Связаться" data-en="Contact me">Связаться</span>
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-ru="Привет! Я Ирина" data-en="Hi! I'm Irina">Привет! Я Ирина</h3>
+                <p data-ru="Я начинающий QA Automation Engineer с сильным бэкграундом в работе со сложными учетными системами и бизнес-процессами. Более 10 лет работы с кассовыми операциями, первичной документацией и системами учета научили меня внимательности к деталям и аналитическому мышлению."
+                   data-en="I am a beginner QA Automation Engineer with a strong background in working with complex accounting systems and business processes. Over 10 years of working with cash operations, primary documentation and accounting systems taught me attention to detail and analytical thinking.">
+                    Я начинающий QA Automation Engineer с сильным бэкграундом в работе со сложными учетными системами и бизнес-процессами. Более 10 лет работы с кассовыми операциями, первичной документацией и системами учета научили меня внимательности к деталям и аналитическому мышлению.
+                </p>
+                <p data-ru="Сейчас я активно развиваюсь в автоматизации тестирования: пишу автотесты на Java с использованием Selenide, применяю паттерн Page Object и настраиваю CI/CD пайплайны. Умею находить расхождения в документации и баги в бизнес-логике приложений."
+                   data-en="Currently I am actively developing in test automation: writing automated tests in Java using Selenide, applying the Page Object pattern and setting up CI/CD pipelines. I can find discrepancies in documentation and bugs in application business logic.">
+                    Сейчас я активно развиваюсь в автоматизации тестирования: пишу автотесты на Java с использованием Selenide, применяю паттерн Page Object и настраиваю CI/CD пайплайны. Умею находить расхождения в документации и баги в бизнес-логике приложений.
+                </p>
+                <p data-ru="Имею опыт работы с <span class='highlight-ai'>1С:Предприятие</span> и системой <span class='highlight-ai'>ЕГАИС</span>, что дало мне понимание реальных бизнес-процессов и умение работать со сложными системами. Стрессоустойчива, умею работать в условиях высокой нагрузки."
+                   data-en="I have experience working with <span class='highlight-ai'>1C:Enterprise</span> and the <span class='highlight-ai'>EGAIS</span> system, which gave me understanding of real business processes and ability to work with complex systems. Stress-resistant, able to work under high load conditions.">
+                    Имею опыт работы с <span class="highlight-ai">1С:Предприятие</span> и системой <span class="highlight-ai">ЕГАИС</span>, что дало мне понимание реальных бизнес-процессов и умение работать со сложными системами. Стрессоустойчива, умею работать в условиях высокой нагрузки.
+                </p>
+                <p data-ru="Живу в городе Ачинск (Красноярский край). Открыта к remote работе и релокации. Стремлюсь к постоянному профессиональному росту и готова применять свои знания в QA на практике."
+                   data-en="I live in Achinsk (Krasnoyarsk Territory). Open to remote work and relocation. I strive for constant professional growth and am ready to apply my QA knowledge in practice.">
+                    Живу в городе Ачинск (Красноярский край). Открыта к remote работе и релокации. Стремлюсь к постоянному профессиональному росту и готова применять свои знания в QA на практике.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section id="about">
-  <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
-  <div class="about-text">
-    <h3 data-ru="👋 Привет! Я QA Automation Engineer" data-en="👋 Hi! I'm a QA Automation Engineer">👋 Привет! Я QA Automation Engineer</h3>
-    <p data-ru="Я начинающий инженер по автоматизации тестирования с сильным бэкграундом в работе со сложными учётными системами <span class='highlight'>(1С, ЕГАИС)</span> и бизнес-процессами."
-       data-en="I'm a junior test automation engineer with a strong background in working with complex accounting systems <span class='highlight'>(1C, EGAIS)</span> and business processes.">
-      Я начинающий инженер по автоматизации тестирования с сильным бэкграундом в работе со сложными учётными системами <span class="highlight">(1С, ЕГАИС)</span> и бизнес-процессами.
-    </p>
-    <p data-ru="Более 10 лет работы с документацией, первичкой и финансами научили меня:"
-       data-en="Over 10 years of working with documentation and finance taught me:">
-      Более 10 лет работы с документацией, первичкой и финансами научили меня:
-    </p>
-    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Внимательности к деталям</b> — нахожу расхождения там, где другие их пропускают" data-en="<b>Attention to detail</b> — finding discrepancies others miss"><b>Внимательности к деталям</b> — нахожу расхождения там, где другие их пропускают</span></li>
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Аналитическому мышлению</b> — умею трассировать цепочки бизнес-процессов" data-en="<b>Analytical thinking</b> — tracing business process chains"><b>Аналитическому мышлению</b> — умею трассировать цепочки бизнес-процессов</span></li>
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Стрессоустойчивости</b> — работала в условиях высокой нагрузки и финансовых рисков" data-en="<b>Stress resistance</b> — worked under high load and financial risks"><b>Стрессоустойчивости</b> — работала в условиях высокой нагрузки и финансовых рисков</span></li>
-      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Работе с требованиями</b> — умею находить противоречия в документации" data-en="<b>Working with requirements</b> — finding contradictions in documentation"><b>Работе с требованиями</b> — умею находить противоречия в документации</span></li>
-    </ul>
-    <p data-ru="Сейчас я активно развиваюсь в автоматизации: пишу автотесты на <span class='highlight'>Java</span> с использованием <span class='highlight'>Selenide</span>, применяю паттерн <span class='highlight'>Page Object</span> и настраиваю <span class='highlight'>CI/CD</span> пайплайны."
-       data-en="Currently I'm actively developing in automation: writing autotests in <span class='highlight'>Java</span> using <span class='highlight'>Selenide</span>, applying the <span class='highlight'>Page Object</span> pattern and setting up <span class='highlight'>CI/CD</span> pipelines.">
-      Сейчас я активно развиваюсь в автоматизации: пишу автотесты на <span class="highlight">Java</span> с использованием <span class="highlight">Selenide</span>, применяю паттерн <span class="highlight">Page Object</span> и настраиваю <span class="highlight">CI/CD</span> пайплайны.
-    </p>
-  </div>
-</section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title" data-ru="Мои навыки" data-en="My Skills">Мои навыки</h2>
+        <div class="skills-container">
+            <div class="skill-tag" data-ru="Java" data-en="Java">Java</div>
+            <div class="skill-tag" data-ru="Selenide" data-en="Selenide">Selenide</div>
+            <div class="skill-tag" data-ru="JUnit 5" data-en="JUnit 5">JUnit 5</div>
+            <div class="skill-tag" data-ru="Maven" data-en="Maven">Maven</div>
+            <div class="skill-tag" data-ru="Gradle" data-en="Gradle">Gradle</div>
+            <div class="skill-tag" data-ru="Page Object" data-en="Page Object">Page Object</div>
+            <div class="skill-tag" data-ru="Git" data-en="Git">Git</div>
+            <div class="skill-tag" data-ru="Postman" data-en="Postman">Postman</div>
+            <div class="skill-tag" data-ru="REST API" data-en="REST API">REST API</div>
+            <div class="skill-tag" data-ru="CI/CD (AppVeyor)" data-en="CI/CD (AppVeyor)">CI/CD (AppVeyor)</div>
+            <div class="skill-tag" data-ru="HTML/CSS" data-en="HTML/CSS">HTML/CSS</div>
+            <div class="skill-tag" data-ru="1С:Предприятие" data-en="1C:Enterprise">1С:Предприятие</div>
+            <div class="skill-tag" data-ru="ЕГАИС" data-en="EGAIS">ЕГАИС</div>
+        </div>
+    </section>
 
-<section id="skills">
-  <h2 class="section-title" data-ru="Технологический стек" data-en="Tech Stack">Технологический стек</h2>
-  <div class="skills-container">
-    <div class="skill-category">
-      <h3><i class="fas fa-code"></i> <span data-ru="Языки программирования" data-en="Languages">Языки программирования</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Java</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">SQL</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h3><i class="fas fa-vial"></i> <span data-ru="Тестирование и автоматизация" data-en="Testing & Automation">Тестирование и автоматизация</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Selenide</span>
-        <span class="skill-tag">JUnit 5</span>
-        <span class="skill-tag">Maven</span>
-        <span class="skill-tag">Gradle</span>
-        <span class="skill-tag">Postman</span>
-        <span class="skill-tag">REST Assured</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h3><i class="fas fa-layer-group"></i> <span data-ru="Паттерны и подходы" data-en="Patterns">Паттерны и подходы</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Page Object</span>
-        <span class="skill-tag">Page Factory</span>
-        <span class="skill-tag">AAA</span>
-        <span class="skill-tag">Fluent Page</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h3><i class="fas fa-tools"></i> <span data-ru="Инструменты" data-en="Tools">Инструменты</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Git</span>
-        <span class="skill-tag">GitHub</span>
-        <span class="skill-tag">AppVeyor CI</span>
-        <span class="skill-tag">IntelliJ IDEA</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">Allure</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h3><i class="fas fa-palette"></i> <span data-ru="Frontend (базово)" data-en="Frontend (basic)">Frontend (базово)</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag">HTML5</span>
-        <span class="skill-tag">CSS3</span>
-        <span class="skill-tag">JavaScript</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h3><i class="fas fa-user-tie"></i> <span data-ru="Soft skills" data-en="Soft skills">Soft skills</span></h3>
-      <div class="skill-tags">
-        <span class="skill-tag" data-ru="Внимание к деталям" data-en="Attention to detail">Внимание к деталям</span>
-        <span class="skill-tag" data-ru="Аналитика" data-en="Analytics">Аналитика</span>
-        <span class="skill-tag" data-ru="Работа в команде" data-en="Teamwork">Работа в команде</span>
-        <span class="skill-tag" data-ru="Обучаемость" data-en="Fast learner">Обучаемость</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title" data-ru="Опыт работы" data-en="Work Experience">Опыт работы</h2>
+        <div class="experience-container">
+            <div class="content-card">
+                <h3 data-ru="Оператор ЕГАИС" data-en="EGAIS Operator">Оператор ЕГАИС</h3>
+                <span class="company" data-ru="Компания «Контроль»" data-en="Company «Kontrol»">Компания «Контроль»</span>
+                <span class="period" data-ru="Январь 2025 — Июль 2025" data-en="January 2025 — July 2025">Январь 2025 — Июль 2025</span>
+                <p data-ru="Работа с государственной системой учета алкогольной продукции. Выявление и устранение расхождений в данных, формирование отчетности, взаимодействие с техническими службами при сбоях интеграций."
+                   data-en="Working with the state alcohol accounting system. Identifying and eliminating data discrepancies, generating reports, interacting with technical services during integration failures.">
+                    Работа с государственной системой учета алкогольной продукции. Выявление и устранение расхождений в данных, формирование отчетности, взаимодействие с техническими службами при сбоях интеграций.
+                </p>
+            </div>
+            <div class="content-card">
+                <h3 data-ru="Оператор-кассир" data-en="Cashier Operator">Оператор-кассир</h3>
+                <span class="company" data-ru="ООО «Вико-Красноярск»" data-en="LLC «Viko-Krasnoyarsk»">ООО «Вико-Красноярск»</span>
+                <span class="period" data-ru="Октябрь 2023 — Октябрь 2024" data-en="October 2023 — October 2024">Октябрь 2023 — Октябрь 2024</span>
+                <p data-ru="Обслуживание клиентов, работа с денежными средствами, приемка товара. Выявление несоответствий по количеству и качеству, работа в условиях высокой нагрузки."
+                   data-en="Customer service, handling cash, receiving goods. Identifying discrepancies in quantity and quality, working under high load conditions.">
+                    Обслуживание клиентов, работа с денежными средствами, приемка товара. Выявление несоответствий по количеству и качеству, работа в условиях высокой нагрузки.
+                </p>
+            </div>
+            <div class="content-card">
+                <h3 data-ru="Оператор 1С" data-en="1C Operator">Оператор 1С</h3>
+                <span class="company" data-ru="ООО «ТД БирТрейд» / «Белый Остров»" data-en="LLC «TD Birtreyd» / «Bely Ostrov»">
+                    ООО «ТД БирТрейд» / «Белый Остров»
+                </span>
+                <span class="period" data-ru="Март 2014 — Апрель 2023" data-en="March 2014 — April 2023">Март 2014 — Апрель 2023</span>
+                <p data-ru="Работа в 1С:Предприятие, ведение первичной документации, обработка заказов. Нахождение багов в учетных системах и передача их разработчикам, взаимодействие с поставщиками."
+                   data-en="Working in 1C:Enterprise, maintaining primary documentation, processing orders. Finding bugs in accounting systems and reporting them to developers, interacting with suppliers.">
+                    Работа в 1С:Предприятие, ведение первичной документации, обработка заказов. Нахождение багов в учетных системах и передача их разработчикам, взаимодействие с поставщиками.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<section id="projects">
-  <h2 class="section-title" data-ru="Избранные проекты" data-en="Featured Projects">Избранные проекты</h2>
-  <div class="projects-container">
-    <div class="project-card">
-      <h3>🏦 <span data-ru="page-object-pattern-demo" data-en="page-object-pattern-demo">page-object-pattern-demo</span></h3>
-      <p class="project-desc" data-ru="Автотесты для функции перевода между картами в интернет-банке. Применён паттерн Page Object, настроен CI/CD."
-         data-en="Autotests for card-to-card transfer in internet banking. Page Object pattern applied, CI/CD configured.">
-        Автотесты для функции перевода между картами в интернет-банке. Применён паттерн Page Object, настроен CI/CD.
-      </p>
-      <div class="project-tech">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">Selenide</span>
-        <span class="tech-tag">JUnit 5</span>
-        <span class="tech-tag">Maven</span>
-        <span class="tech-tag">AppVeyor</span>
-      </div>
-      <a href="https://github.com/Kyklina-Irina/page-object-pattern-demo" target="_blank" class="project-link">
-        <i class="fab fa-github"></i> <span data-ru="Смотреть на GitHub" data-en="View on GitHub">Смотреть на GitHub</span>
-      </a>
-    </div>
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title" data-ru="Образование" data-en="Education">Образование</h2>
+        <div class="education-container">
+            <div class="content-card">
+                <h3 data-ru="QA Automation Engineer" data-en="QA Automation Engineer">QA Automation Engineer</h3>
+                <span class="institution" data-ru="Нетология" data-en="Netology">Нетология</span>
+                <span class="period" data-ru="2025" data-en="2025">2025</span>
+                <p data-ru="Курс по автоматизации тестирования: Java, Selenide, JUnit 5, Maven, паттерн Page Object, CI/CD."
+                   data-en="Test automation course: Java, Selenide, JUnit 5, Maven, Page Object pattern, CI/CD.">
+                    Курс по автоматизации тестирования: Java, Selenide, JUnit 5, Maven, паттерн Page Object, CI/CD.
+                </p>
+            </div>
+            <div class="content-card">
+                <h3 data-ru="Автоматизация сметного дела" data-en="Estimate Automation">Автоматизация сметного дела</h3>
+                <span class="institution" data-ru="Центр «Партнёр»" data-en="Center «Partner»">Центр «Партнёр»</span>
+                <span class="period" data-ru="2020" data-en="2020">2020</span>
+                <p data-ru="Навыки автоматизации расчетов и работы со специализированным ПО."
+                   data-en="Skills in automating calculations and working with specialized software.">
+                    Навыки автоматизации расчетов и работы со специализированным ПО.
+                </p>
+            </div>
+            <div class="content-card">
+                <h3 data-ru="Автоматизированные системы обработки информации" data-en="Automated Information Processing Systems">
+                    Автоматизированные системы обработки информации
+                </h3>
+                <span class="institution" data-ru="СибГАУ им. Решетнева" data-en="SibSAU named after Reshetnev">СибГАУ им. Решетнева</span>
+                <span class="period" data-ru="2005 - 2007" data-en="2005 - 2007">2005 - 2007</span>
+                <p data-ru="Основы автоматизированных систем, программирования и управления информационными потоками."
+                   data-en="Basics of automated systems, programming and information flow management.">
+                    Основы автоматизированных систем, программирования и управления информационными потоками.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <div class="project-card">
-      <h3>🧪 <span data-ru="selenide-automation" data-en="selenide-automation">selen
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title" data-ru="Контакты" data-en="Contact">Контакты</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Telegram" data-en="Telegram">Telegram</h3>
+                        <a href="https://t.me/Irina1704" target="_blank">@Irina1704</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Телефон" data-en="Phone">Телефон</h3>
+                        <a href="tel:+79080251938">+7 (908) 025-19-38</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="GitHub" data-en="GitHub">GitHub</h3>
+                        <a href="https://github.com/Kyklina-Irina" target="_blank">github.com/Kyklina-Irina</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-ru="Местоположение" data-en="Location">Местоположение</h3>
+                        <p data-ru="Ачинск, Красноярский край (Remote/Релокация)" data-en="Achinsk, Krasnoyarsk Territory (Remote/Relocation)">
+                            Ачинск, Красноярский край (Remote/Релокация)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-ru="Ваше имя" data-en="Your Name">Ваше имя</label>
+                        <input type="text" id="name" class="form-control" required
+                               placeholder="Введите ваше имя"
+                               data-ru="Введите ваше имя" data-en="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-ru="Email" data-en="Email">Email</label>
+                        <input type="email" id="email" class="form-control" required
+                               placeholder="Введите ваш email"
+                               data-ru="Введите ваш email" data-en="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
+                        <textarea id="message" class="form-control" required
+                                  placeholder="Напишите ваше сообщение..."
+                                  data-ru="Напишите ваше сообщение..." data-en="Write your message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-ru="Отправить сообщение" data-en="Send Message">
+                        Отправить сообщение
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://t.me/Irina1704" class="social-link telegram" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://github.com/Kyklina-Irina" class="social-link github" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="copyright" data-ru="© 2026 Куклина Ирина • QA Automation Engineer"
+               data-en="© 2026 Kuklina Irina • QA Automation Engineer">
+                © 2026 Куклина Ирина • QA Automation Engineer
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Language Switch
+        const languageButtons = document.querySelectorAll('.language-switch button');
+        const translatableElements = document.querySelectorAll('[data-ru][data-en]');
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                languageButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                translatableElements.forEach(element => {
+                    if (lang === 'en') {
+                        element.innerHTML = element.getAttribute('data-en');
+                    } else {
+                        element.innerHTML = element.getAttribute('data-ru');
+                    }
+                });
+
+                localStorage.setItem('language', lang);
+            });
+        });
+
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage === 'en') {
+            document.querySelector('.language-switch button[data-lang="en"]').click();
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 65,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
