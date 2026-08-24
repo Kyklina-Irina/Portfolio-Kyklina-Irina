@@ -520,4 +520,402 @@ section {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 0.95rem;
-  color
+  color: var(--text-light);
+  opacity: 0.95;
+}
+
+.content-card ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #43e97b;
+  font-weight: bold;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  background: var(--card-bg);
+  padding: 1.4rem;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: var(--shadow-neon);
+  border: 1.5px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+  border-color: rgba(102, 126, 234, 0.8);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.7);
+}
+
+.contact-details h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.contact-details p, .contact-details a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  transition: var(--transition);
+}
+
+.contact-details a:hover {
+  color: #4facfe;
+}
+
+.contact-form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1.5px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid rgba(102, 126, 234, 0.6);
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(30, 25, 70, 0.8);
+  color: var(--text-light);
+  transition: var(--transition);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gradient-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  box-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+}
+
+.submit-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 35px rgba(102, 126, 234, 0.9);
+}
+
+footer {
+  background: rgba(10, 8, 26, 0.99);
+  padding: 2.5rem 2%;
+  text-align: center;
+  border-top: 1.5px solid var(--card-border);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  width: 60px;
+  height: 60px;
+  background: var(--card-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4facfe;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--card-border);
+  box-shadow: var(--shadow-neon);
+}
+
+.social-link:hover {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-6px) rotate(360deg);
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.9);
+  border-color: transparent;
+}
+
+.copyright {
+  opacity: 0.8;
+  font-size: 1rem;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .section-title { font-size: 1.9rem; }
+  .contact-container { grid-template-columns: 1fr; }
+  .hero-buttons { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  section { padding: 3rem 2%; }
+  .project-card, .content-card, .skill-category { padding: 1.4rem; }
+  .contact-info { gap: 1rem; }
+  .contact-item { padding: 1.2rem; gap: 1rem; }
+  .contact-icon { width: 45px; height: 45px; font-size: 1.2rem; }
+  .social-links { gap: 1.2rem; }
+  .social-link { width: 55px; height: 55px; font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.9rem; }
+  .section-title { font-size: 1.6rem; }
+  .logo { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">Irina QA</a>
+  <button class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav>
+    <ul id="navMenu">
+      <li><a href="#about" data-ru="Обо мне" data-en="About">Обо мне</a></li>
+      <li><a href="#skills" data-ru="Навыки" data-en="Skills">Навыки</a></li>
+      <li><a href="#projects" data-ru="Проекты" data-en="Projects">Проекты</a></li>
+      <li><a href="#experience" data-ru="Опыт" data-en="Experience">Опыт</a></li>
+      <li><a href="#education" data-ru="Образование" data-en="Education">Образование</a></li>
+      <li><a href="#contact" data-ru="Контакты" data-en="Contact">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="header-controls">
+    <div class="language-switch">
+      <button class="active" data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1 data-ru="Куклина Ирина" data-en="Kuklina Irina">Куклина Ирина</h1>
+    <div class="hero-subtitle" data-ru="Junior QA Automation Engineer" data-en="Junior QA Automation Engineer">
+      Junior QA Automation Engineer
+    </div>
+    <p data-ru="Java • Selenide • JUnit 5 • Page Object • CI/CD. Пишу надёжные автотесты, применяю паттерны проектирования и настраиваю автоматизацию в CI-пайплайнах."
+       data-en="Java • Selenide • JUnit 5 • Page Object • CI/CD. I write reliable autotests, apply design patterns and set up automation in CI pipelines.">
+      Java • Selenide • JUnit 5 • Page Object • CI/CD. Пишу надёжные автотесты, применяю паттерны проектирования и настраиваю автоматизацию в CI-пайплайнах.
+    </p>
+    <div class="qa-badge" data-ru="🚀 Открыта к предложениям о работе" data-en="🚀 Open to work">
+      🚀 <span data-ru="Открыта к предложениям о работе" data-en="Open to work">Открыта к предложениям о работе</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">
+        <i class="fas fa-code"></i> <span data-ru="Мои проекты" data-en="My projects">Мои проекты</span>
+      </a>
+      <a href="#contact" class="btn btn-secondary">
+        <i class="fas fa-paper-plane"></i> <span data-ru="Связаться" data-en="Contact me">Связаться</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title" data-ru="Обо мне" data-en="About Me">Обо мне</h2>
+  <div class="about-text">
+    <h3 data-ru="👋 Привет! Я QA Automation Engineer" data-en="👋 Hi! I'm a QA Automation Engineer">👋 Привет! Я QA Automation Engineer</h3>
+    <p data-ru="Я начинающий инженер по автоматизации тестирования с сильным бэкграундом в работе со сложными учётными системами <span class='highlight'>(1С, ЕГАИС)</span> и бизнес-процессами."
+       data-en="I'm a junior test automation engineer with a strong background in working with complex accounting systems <span class='highlight'>(1C, EGAIS)</span> and business processes.">
+      Я начинающий инженер по автоматизации тестирования с сильным бэкграундом в работе со сложными учётными системами <span class="highlight">(1С, ЕГАИС)</span> и бизнес-процессами.
+    </p>
+    <p data-ru="Более 10 лет работы с документацией, первичкой и финансами научили меня:"
+       data-en="Over 10 years of working with documentation and finance taught me:">
+      Более 10 лет работы с документацией, первичкой и финансами научили меня:
+    </p>
+    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Внимательности к деталям</b> — нахожу расхождения там, где другие их пропускают" data-en="<b>Attention to detail</b> — finding discrepancies others miss"><b>Внимательности к деталям</b> — нахожу расхождения там, где другие их пропускают</span></li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Аналитическому мышлению</b> — умею трассировать цепочки бизнес-процессов" data-en="<b>Analytical thinking</b> — tracing business process chains"><b>Аналитическому мышлению</b> — умею трассировать цепочки бизнес-процессов</span></li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Стрессоустойчивости</b> — работала в условиях высокой нагрузки и финансовых рисков" data-en="<b>Stress resistance</b> — worked under high load and financial risks"><b>Стрессоустойчивости</b> — работала в условиях высокой нагрузки и финансовых рисков</span></li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.4rem;"><span style="position: absolute; left: 0; color: #43e97b; font-weight: bold;">▸</span> <span data-ru="<b>Работе с требованиями</b> — умею находить противоречия в документации" data-en="<b>Working with requirements</b> — finding contradictions in documentation"><b>Работе с требованиями</b> — умею находить противоречия в документации</span></li>
+    </ul>
+    <p data-ru="Сейчас я активно развиваюсь в автоматизации: пишу автотесты на <span class='highlight'>Java</span> с использованием <span class='highlight'>Selenide</span>, применяю паттерн <span class='highlight'>Page Object</span> и настраиваю <span class='highlight'>CI/CD</span> пайплайны."
+       data-en="Currently I'm actively developing in automation: writing autotests in <span class='highlight'>Java</span> using <span class='highlight'>Selenide</span>, applying the <span class='highlight'>Page Object</span> pattern and setting up <span class='highlight'>CI/CD</span> pipelines.">
+      Сейчас я активно развиваюсь в автоматизации: пишу автотесты на <span class="highlight">Java</span> с использованием <span class="highlight">Selenide</span>, применяю паттерн <span class="highlight">Page Object</span> и настраиваю <span class="highlight">CI/CD</span> пайплайны.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title" data-ru="Технологический стек" data-en="Tech Stack">Технологический стек</h2>
+  <div class="skills-container">
+    <div class="skill-category">
+      <h3><i class="fas fa-code"></i> <span data-ru="Языки программирования" data-en="Languages">Языки программирования</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3><i class="fas fa-vial"></i> <span data-ru="Тестирование и автоматизация" data-en="Testing & Automation">Тестирование и автоматизация</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Selenide</span>
+        <span class="skill-tag">JUnit 5</span>
+        <span class="skill-tag">Maven</span>
+        <span class="skill-tag">Gradle</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">REST Assured</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3><i class="fas fa-layer-group"></i> <span data-ru="Паттерны и подходы" data-en="Patterns">Паттерны и подходы</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Page Object</span>
+        <span class="skill-tag">Page Factory</span>
+        <span class="skill-tag">AAA</span>
+        <span class="skill-tag">Fluent Page</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3><i class="fas fa-tools"></i> <span data-ru="Инструменты" data-en="Tools">Инструменты</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">AppVeyor CI</span>
+        <span class="skill-tag">IntelliJ IDEA</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Allure</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3><i class="fas fa-palette"></i> <span data-ru="Frontend (базово)" data-en="Frontend (basic)">Frontend (базово)</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3><i class="fas fa-user-tie"></i> <span data-ru="Soft skills" data-en="Soft skills">Soft skills</span></h3>
+      <div class="skill-tags">
+        <span class="skill-tag" data-ru="Внимание к деталям" data-en="Attention to detail">Внимание к деталям</span>
+        <span class="skill-tag" data-ru="Аналитика" data-en="Analytics">Аналитика</span>
+        <span class="skill-tag" data-ru="Работа в команде" data-en="Teamwork">Работа в команде</span>
+        <span class="skill-tag" data-ru="Обучаемость" data-en="Fast learner">Обучаемость</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title" data-ru="Избранные проекты" data-en="Featured Projects">Избранные проекты</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>🏦 <span data-ru="page-object-pattern-demo" data-en="page-object-pattern-demo">page-object-pattern-demo</span></h3>
+      <p class="project-desc" data-ru="Автотесты для функции перевода между картами в интернет-банке. Применён паттерн Page Object, настроен CI/CD."
+         data-en="Autotests for card-to-card transfer in internet banking. Page Object pattern applied, CI/CD configured.">
+        Автотесты для функции перевода между картами в интернет-банке. Применён паттерн Page Object, настроен CI/CD.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Selenide</span>
+        <span class="tech-tag">JUnit 5</span>
+        <span class="tech-tag">Maven</span>
+        <span class="tech-tag">AppVeyor</span>
+      </div>
+      <a href="https://github.com/Kyklina-Irina/page-object-pattern-demo" target="_blank" class="project-link">
+        <i class="fab fa-github"></i> <span data-ru="Смотреть на GitHub" data-en="View on GitHub">Смотреть на GitHub</span>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>🧪 <span data-ru="selenide-automation" data-en="selenide-automation">selen
